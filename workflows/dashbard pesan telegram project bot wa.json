@@ -1,0 +1,955 @@
+{
+  "active": true,
+  "connections": {
+    "Users1": {
+      "main": [
+        [
+          {
+            "node": "Get Pesan db1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Pesan",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Pesan1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send message and wait for response3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit User2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response3": {
+      "main": [
+        [
+          {
+            "node": "Delete Pesan db1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Users1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Get Pesan db1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Pesan": {
+      "main": [
+        [
+          {
+            "node": "Add Pesan db2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Pesan db2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Pesan db1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Pesan1": {
+      "main": [
+        [
+          {
+            "node": "Edit User2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-14T03:37:37.492Z",
+  "id": "bGx3tnX9N58VWJe3",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "dashbard pesan telegram project bot wa",
+  "nodes": [
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/get_pesan",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f07e0cb2-72df-4602-a30e-c08126b13d84"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/get_pesan"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "db616120-0d8c-4e73-8f47-8f077f1b75a1",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/add_pesan",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/add_pesan"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1ee9e397-95f2-4b85-a4e6-6d9ef135ea89",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/edit_pesan",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/edit_pesan"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b348759d-7dbc-47ce-bd83-c85308fa0ffa",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/delete_pesan",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/delete_pesan"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        16,
+        320
+      ],
+      "id": "fd01ea49-d40d-44dd-b07a-9488307fd6c5",
+      "name": "Users1"
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menambahkan Pesan :\n\nPesan: {{ $('Add Pesan').item.json.data['Masukkan Nama Pesan :'] }}\nBalasan_pesan: {{ $('Add Pesan').item.json.data.Balasan_pesan }}",
+        "additionalFields": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        256
+      ],
+      "id": "6f1f7cf3-b236-4a9e-aca4-5f07d0eddc1d",
+      "name": "Send a text message15",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.data.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json.data[\"Masukkan Nama Pesan :\"] }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ $json.data.Balasan_pesan }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        464,
+        448
+      ],
+      "id": "5f1dd1e1-f485-468a-a1ea-16a729714e2a",
+      "name": "Edit User2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "6352808441",
+        "message": "Masukkan id data yang ingin di Hapus :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "placeholder": "number id",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This Button",
+          "responseFormCustomCss": ":root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        640
+      ],
+      "id": "b08abc35-9cd4-44a8-8864-48579127ed84",
+      "name": "Send message and wait for response3",
+      "webhookId": "9b64b561-70cb-42d3-b0ac-f488fca2a628",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Mengedit Pesan :\n\nid: {{ $('Edit Pesan1').item.json.data.id }}\nPesan: {{ $('Edit Pesan1').item.json.data['Masukkan Nama Pesan :'] }}\nBalasan_pesan: {{ $('Edit Pesan1').item.json.data.Balasan_pesan }}",
+        "additionalFields": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        448
+      ],
+      "id": "4bb318cf-dc8d-4df2-99a3-444d90218ce5",
+      "name": "Send a text message17",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menghapus Pesan :\n\nDengan ID: {{ $('Send message and wait for response3').item.json.data.id }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        640
+      ],
+      "id": "cc9a38eb-593e-4fbd-8ea3-481bb0502aa6",
+      "name": "Send a text message18",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.callback_query.data }}{{ $json.message.text }}",
+                    "rightValue": "/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    },
+                    "id": "e4bd0aa9-3585-40bd-9954-7d3774b74299"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/aman"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -208,
+        432
+      ],
+      "id": "f56608b5-1978-4d18-8289-3f46af027052",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "Masukkan commant berikut :",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getUsers",
+                    "additionalFields": {
+                      "callback_data": "/getUsers"
+                    }
+                  },
+                  {
+                    "text": "/addUser",
+                    "additionalFields": {
+                      "callback_data": "/addUser"
+                    }
+                  },
+                  {
+                    "text": "/editUser",
+                    "additionalFields": {
+                      "callback_data": "/editUser"
+                    }
+                  },
+                  {
+                    "text": "/deleteUser",
+                    "additionalFields": {
+                      "callback_data": "/deleteUser"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getCategories",
+                    "additionalFields": {
+                      "callback_data": "/getCategories"
+                    }
+                  },
+                  {
+                    "text": "/addCategory",
+                    "additionalFields": {
+                      "callback_data": "/addCategory"
+                    }
+                  },
+                  {
+                    "text": "/editCategory",
+                    "additionalFields": {
+                      "callback_data": "/editCategory"
+                    }
+                  },
+                  {
+                    "text": "/deleteCategory",
+                    "additionalFields": {
+                      "callback_data": "/deleteCategory"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getProducts",
+                    "additionalFields": {
+                      "callback_data": "/getProducts"
+                    }
+                  },
+                  {
+                    "text": "/addProduct",
+                    "additionalFields": {
+                      "callback_data": "/addProduct"
+                    }
+                  },
+                  {
+                    "text": "/editProduct",
+                    "additionalFields": {
+                      "callback_data": "/editProduct"
+                    }
+                  },
+                  {
+                    "text": "/deleteProduct",
+                    "additionalFields": {
+                      "callback_data": "/deleteProduct"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        944,
+        400
+      ],
+      "id": "77ddfb09-4845-4818-8adc-3be996620ba7",
+      "name": "Send a text message",
+      "webhookId": "21d82d72-567d-4fd6-b3be-4029c7e5dcdc",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -656,
+        464
+      ],
+      "id": "5baf95e0-7522-49aa-925c-0e7361781296",
+      "name": "Telegram Trigger",
+      "webhookId": "d9298313-4db7-4b49-8621-2de5aba31c80",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c5b126b3-0b30-4fde-97e4-c8b2c1f13601",
+              "leftValue": "={{ $json.message.chat.id }}",
+              "rightValue": 6352808441,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -432,
+        464
+      ],
+      "id": "d73fb19b-a2ba-43c4-91b8-20b5becdc84f",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        240,
+        64
+      ],
+      "id": "f0d33b68-5f7d-4eb2-b95a-736fdcd02253",
+      "name": "Get Pesan db1",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Masukkan Nama Pesan :",
+              "placeholder": "Nama Pesan",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Balasan_pesan",
+              "fieldType": "textarea",
+              "placeholder": "Balasan_pesan"
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "Pesan Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        256
+      ],
+      "id": "7be780d8-88fe-47b6-b9a0-08c78797dea1",
+      "name": "Add Pesan",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json.data['Masukkan Nama Pesan :'] }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ $json.data.Balasan_pesan }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        464,
+        256
+      ],
+      "id": "86f8a068-5f45-4e5a-a1fa-8dff1469423f",
+      "name": "Add Pesan db2",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.data.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        464,
+        640
+      ],
+      "id": "5a82e167-66bb-441e-8d72-85a5d02a0bbd",
+      "name": "Delete Pesan db1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "placeholder": "id",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Masukkan Nama Pesan :",
+              "placeholder": "Nama Pesan"
+            },
+            {
+              "fieldLabel": "Balasan_pesan",
+              "fieldType": "textarea",
+              "placeholder": "Balasan_pesan"
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "Pesan Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        448
+      ],
+      "id": "279c24cd-244c-430e-bb4c-3fa0e648e292",
+      "name": "Edit Pesan1",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "=id: {{ $json.id }}\npesan: {{ $json.pesan }}\nbalasan:\n{{ $json.balasan }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        448,
+        80
+      ],
+      "id": "afb09344-a748-42b9-9918-e1acb94df80b",
+      "name": "Send a text message19",
+      "webhookId": "6d1d7612-a380-4880-9c3b-25f1189ca910",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "={{ $('Telegram Trigger').item.json.message.text }}",
+        "replyMarkup": "replyKeyboard",
+        "replyKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/get_pesan",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/add_pesan",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/edit_pesan",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/delete_pesan",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {
+          "resize_keyboard": false
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        272,
+        832
+      ],
+      "id": "113e1e1c-db8b-48b5-930c-9a87c86890b9",
+      "name": "Send a text message1",
+      "webhookId": "c9d9af84-909a-4fd0-ba8b-bbd20de15001",
+      "credentials": {
+        "telegramApi": {
+          "id": "xVwpIpim9OEa8X8S",
+          "name": "jakeuwi_bot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-14T03:37:37.495Z",
+      "updatedAt": "2025-09-14T03:37:37.495Z",
+      "role": "workflow:owner",
+      "workflowId": "bGx3tnX9N58VWJe3",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-16T13:20:03.000Z",
+  "versionId": "6856b94c-ebfe-4e91-b0f8-6a03c1da2567"
+}
