@@ -1,0 +1,139 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get many messages",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get many messages2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-12T02:54:57.491Z",
+  "id": "SrVJwReM7POkNMV4",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My Sub-Workflow 1",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Email"
+            }
+          ]
+        }
+      },
+      "id": "c055762a-8fe7-4141-a639-df2372f30060",
+      "typeVersion": 1.1,
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -288,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        352
+      ],
+      "id": "b3dcd135-f538-41e8-92df-b3bc96e06365",
+      "name": "Get many messages",
+      "webhookId": "a4d08dcf-2f77-4121-a34b-54e3770c769e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "A0kR6KDbZM4fYEND",
+          "name": "MamamMewing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        576,
+        688
+      ],
+      "id": "696096d8-213d-4f94-bb15-d1edf0d092d1",
+      "name": "Get many messages2",
+      "webhookId": "a4d08dcf-2f77-4121-a34b-54e3770c769e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "A0kR6KDbZM4fYEND",
+          "name": "MamamMewing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "Hello ",
+        "message": "Ini penting",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        560
+      ],
+      "id": "fab8f1d1-78d4-4fb5-ae75-637a50e7bd85",
+      "name": "Send a message",
+      "webhookId": "a4d08dcf-2f77-4121-a34b-54e3770c769e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "A0kR6KDbZM4fYEND",
+          "name": "MamamMewing"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-12T02:54:57.520Z",
+      "updatedAt": "2025-09-12T02:54:57.520Z",
+      "role": "workflow:owner",
+      "workflowId": "SrVJwReM7POkNMV4",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-12T10:15:34.000Z",
+  "versionId": "d47673dd-b3aa-4851-9aae-e3f6dea08e0f"
+}
