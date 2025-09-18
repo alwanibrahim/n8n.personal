@@ -1,0 +1,249 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-15T09:31:21.227Z",
+  "id": "TeVJJzdiJuwheTpm",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "latihan untuk wait response manual",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        -16
+      ],
+      "id": "90155458-77ab-4b58-beba-703d19cd81ab",
+      "name": "Telegram Trigger",
+      "webhookId": "85e63d7f-a080-45bb-8c97-0ae928f2f431",
+      "credentials": {
+        "telegramApi": {
+          "id": "BEEzelEsE6B83EBb",
+          "name": "bdeyqkgd_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $json.result.chat.id }}"
+            },
+            {
+              "column": "username",
+              "value": "={{ $json.result.chat.username }}"
+            },
+            {
+              "column": "status",
+              "value": "WAITING_EMAIL"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        832,
+        -48
+      ],
+      "id": "3e41e5f2-a3ec-47cf-93cd-2ec9c32d15c8",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "username",
+              "value": "={{ $json.message.chat.username }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        320,
+        64
+      ],
+      "id": "bddbd98a-96fd-4427-b7f7-10a430b60031",
+      "name": "Select rows from a table",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "91c8adde-7c3f-4065-9b85-9616a0f4e2fb",
+              "leftValue": "={{ $json.data[0].email === null }}",
+              "rightValue": "null",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "edd2d084-59e6-40ac-a55a-85ad11273726",
+              "leftValue": "={{ $json.data.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        464,
+        64
+      ],
+      "id": "a86df4fd-27ab-41ad-a398-fe92f9b9aea7",
+      "name": "If",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "Kamu belum memiliki account silahkan isikan email :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        704,
+        -48
+      ],
+      "id": "4e2ddb6e-8043-4bcb-b70d-fb106b2a70c0",
+      "name": "Send a text message",
+      "webhookId": "6b888689-c548-45b6-8322-45ec60edcfd7",
+      "credentials": {
+        "telegramApi": {
+          "id": "BEEzelEsE6B83EBb",
+          "name": "bdeyqkgd_bot"
+        }
+      },
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-15T09:31:21.239Z",
+      "updatedAt": "2025-09-15T09:31:21.239Z",
+      "role": "workflow:owner",
+      "workflowId": "TeVJJzdiJuwheTpm",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-16T02:22:10.000Z",
+  "versionId": "5786e75d-3593-4e67-b260-6b69f54d6050"
+}
