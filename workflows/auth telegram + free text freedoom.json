@@ -1,0 +1,1712 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Select rows from a table1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "Send a text message6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert or update rows in a table": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "Insert or update rows in a table1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "node": "Send a text message5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Insert or update rows in a table2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message5": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message6": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message2": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Delete table or rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete table or rows": {
+      "main": [
+        [
+          {
+            "node": "Update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update rows in a table": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-15T15:03:49.179Z",
+  "id": "QFShzEK35JSCtnf8",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "auth telegram + free text freedoom",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1840,
+        -240
+      ],
+      "id": "b7ac8178-d5a7-43ad-b8fa-491398a92368",
+      "name": "Telegram Trigger",
+      "webhookId": "b30c88f9-f56d-48dd-b6f9-da9ac04664ec",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $json.result.chat.id }}"
+            },
+            {
+              "column": "username",
+              "value": "={{ $json.result.chat.username }}"
+            },
+            {
+              "column": "status",
+              "value": "WAITING_EMAIL"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1392,
+        784
+      ],
+      "id": "84c1f4de-289b-4cf6-8455-07db85d927d7",
+      "name": "Insert rows in a table",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $json.message.chat.id }}{{ $json.callback_query.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1616,
+        -240
+      ],
+      "id": "3c0b160c-afcd-4258-86c8-f0c7efdb54fb",
+      "name": "Select rows from a table",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "91c8adde-7c3f-4065-9b85-9616a0f4e2fb",
+              "leftValue": "={{ $json.data[0].email === null }}",
+              "rightValue": "null",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "edd2d084-59e6-40ac-a55a-85ad11273726",
+              "leftValue": "={{ $json.data.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1840,
+        784
+      ],
+      "id": "816f9c8f-fa56-4eba-8eb5-d3455a860f73",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "Kamu belum memiliki account silahkan isikan email :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1616,
+        784
+      ],
+      "id": "13fee0f3-0edb-4f04-8462-020004567d97",
+      "name": "Send a text message",
+      "webhookId": "8740086c-27c2-4310-9186-4a0081ee5006",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "IDLE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9b00dbce-1144-4437-bffa-f3ddc825fcf8"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "IDLE"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0c77a72b-f324-45de-9f59-8cc7ff00ed74",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_EMAIL",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_EMAIL"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e9d7626e-3696-400b-ba3d-1e80694a8f59",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_OTP",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_OTP"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7daff115-6f65-4a38-b4c7-fae51a827fb7",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_PHONE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_PHONE"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2081e90e-7a14-4b55-afb0-1a49d5387fb7",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_ADDRESS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_ADDRESS"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3a77b550-68de-456f-8ac1-a2374b4a7337",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_APPROVAL",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_APPROVAL"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "91338592-c06c-430f-8ad9-07c5fa765b82",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "VERIFIED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "VERIFIED"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "66f16421-9c7f-4f10-b263-0417b17b8f00",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "BLOCKED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "BLOCKED"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1392,
+        -352
+      ],
+      "id": "03a97058-96f3-4d3a-b37e-e1c99db7301d",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $('Select rows from a table').item.json.data[0].id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "status",
+              "value": "WAITING_OTP"
+            },
+            {
+              "column": "email",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}"
+            },
+            {
+              "column": "chat_id",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -720,
+        -432
+      ],
+      "id": "f2473b3a-97ae-47a7-a798-35877300b4d3",
+      "name": "Insert or update rows in a table",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const email = $('Telegram Trigger').first().json.message.text;\nconst regex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n\nreturn[{\n  email, valid:regex.test(email)\n}]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1168,
+        -336
+      ],
+      "id": "01eb26b1-7ab8-45a0-9ce9-e6eaec7d072b",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Masukkan email yang benar dan sesuai :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        -240
+      ],
+      "id": "a33a5ae0-b078-4972-9d86-e911dcd5036c",
+      "name": "Send a text message1",
+      "webhookId": "f8c537a5-56ba-4385-b311-8cfbbe998c31",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0f58af84-5fb8-4758-8abe-b7dafdf81b90",
+              "leftValue": "={{ $json.valid }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -944,
+        -336
+      ],
+      "id": "2c02bcaa-e66b-4a49-b9d3-99076cbafcfa",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Mantap data email sudah di tambahkan, untuk melanjutkan saya telah mengirimkan otp kepada anda dengan tujuan keamanan account silahkan verifikasi terlebih dahulu,\nkirim otp anda ke sini :",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "EXIT",
+                    "additionalFields": {
+                      "callback_data": "EXIT"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -48,
+        -432
+      ],
+      "id": "f5367e3d-8a92-4471-9903-13a4642760ae",
+      "name": "Send a text message2",
+      "webhookId": "09d5303a-37bb-4abc-94f9-581225f263e3",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Telegram Trigger').item.json.callback_query.data }}",
+                    "rightValue": "EXIT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "88db4e48-2632-4924-a754-66902b11a3ca"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "EXIT"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "140ee416-811d-4b42-a9c2-06670c4fa2c0",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.callback_query.data }}",
+                    "rightValue": "REGISTER",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "REGISTER"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "152fbc8d-3050-4eda-a64e-a1d0f6c0d961",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.callback_query.data }}",
+                    "rightValue": "PROFILE_USER",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PROFILE_USER"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1168,
+        -672
+      ],
+      "id": "a2c655a8-d16d-425a-9477-678fe6f00084",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.data[0].id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $json.data[0].chat_id }}"
+            },
+            {
+              "column": "status",
+              "value": "IDLE"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -944,
+        -640
+      ],
+      "id": "122c10f4-d67d-44d0-a595-ac5bd8d65e95",
+      "name": "Insert or update rows in a table1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.callback_query.message.chat.id }}",
+        "text": "Selamat datang di Toko mamam mewing :\n\nkami menyediakan banyak layanan terutama di dalam hal pembuatan web dan bot,\nsilahkan register terlebih dahulu jika belum memiliki account di telegram bot kita,\n\nthx you😊",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "REGISTER",
+                    "additionalFields": {
+                      "callback_data": "REGISTER"
+                    }
+                  },
+                  {
+                    "text": "PROFILE_USER",
+                    "additionalFields": {
+                      "callback_data": "PROFILE_USER"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        -640
+      ],
+      "id": "eaa14428-c0f6-476d-85a9-261b92027237",
+      "name": "Send a text message3",
+      "webhookId": "ddd3f713-6498-44f5-875f-daf58db87c33",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Telegram Trigger').item.json.callback_query.data }}",
+                    "rightValue": "EXIT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "88db4e48-2632-4924-a754-66902b11a3ca"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "EXIT"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "140ee416-811d-4b42-a9c2-06670c4fa2c0",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.callback_query.data }}",
+                    "rightValue": "REGISTER",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "REGISTER"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "152fbc8d-3050-4eda-a64e-a1d0f6c0d961",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.callback_query.data }}",
+                    "rightValue": "PROFILE_USER",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PROFILE_USER"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a1136224-8a86-4ccc-b3ca-7a5b8ec9fba7",
+                    "leftValue": "={{ $json.data.length }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/start"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1840,
+        416
+      ],
+      "id": "d473bcc0-237f-4196-ae69-aba1636517f5",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.data[0].id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $json.data[0].chat_id }}"
+            },
+            {
+              "column": "status",
+              "value": "IDLE"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1616,
+        368
+      ],
+      "id": "466297dc-6459-4017-8800-d74d687fa989",
+      "name": "Insert or update rows in a table2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.callback_query.message.chat.id }}",
+        "text": "Selamat datang di Toko mamam mewing :\n\nkami menyediakan banyak layanan terutama di dalam hal pembuatan web dan bot,\nsilahkan register terlebih dahulu jika belum memiliki account di telegram bot kita,\n\nthx you😊",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "REGISTER",
+                    "additionalFields": {
+                      "callback_data": "REGISTER"
+                    }
+                  },
+                  {
+                    "text": "PROFILE_USER",
+                    "additionalFields": {
+                      "callback_data": "PROFILE_USER"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1392,
+        368
+      ],
+      "id": "dc58999b-d054-472d-9b1b-c049cfbec56e",
+      "name": "Send a text message4",
+      "webhookId": "ddd3f713-6498-44f5-875f-daf58db87c33",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Selamat datang di Toko kami,\n\ntoko kami menyediakan banyak hal, diantarnya :\n1. app premium\n2. jasa web\n3. jasa bot\n4. jasa jasa lain nya\n\nSilahkan register terlebih dahulu dengan memasukkan email anda :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1616,
+        560
+      ],
+      "id": "ddc4719f-1ea1-4861-8dc1-97aa6e061d29",
+      "name": "Send a text message5",
+      "webhookId": "9524021e-8956-4ecb-8b41-6f2ed2d7de76",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+            },
+            {
+              "column": "username",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.username }}"
+            },
+            {
+              "column": "status",
+              "value": "WAITING_EMAIL"
+            },
+            {
+              "column": "is_verified",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1392,
+        560
+      ],
+      "id": "0b63484b-64e8-4864-ae7e-c48baa664075",
+      "name": "Insert rows in a table1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Selamat datang di Toko kami,\n\ntoko kami menyediakan banyak hal, diantarnya :\n1. app premium\n2. jasa web\n3. jasa bot\n4. jasa jasa lain nya\n\nSilahkan register terlebih dahulu dengan memasukkan email anda :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1168,
+        144
+      ],
+      "id": "7c90ee0f-d122-4d2b-bf96-6881172bf314",
+      "name": "Send a text message6",
+      "webhookId": "9524021e-8956-4ecb-8b41-6f2ed2d7de76",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+            },
+            {
+              "column": "username",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.username }}"
+            },
+            {
+              "column": "status",
+              "value": "WAITING_EMAIL"
+            },
+            {
+              "column": "is_verified",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -944,
+        144
+      ],
+      "id": "bb79247f-bd67-4cd9-b677-ea22892e7103",
+      "name": "Insert rows in a table2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date($now);\nconst otp = Math.floor(100000 + Math.random() * 900000).toString();\nconst expiredAt = new Date(now.getTime() + 5 * 60 * 1000);\n\n// Adjust untuk timezone WIB (UTC+7)\nfunction toLocalMySQLDateTime(date) {\n  const localDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));\n  return localDate.toISOString().slice(0, 19).replace('T', ' ');\n}\n\nreturn [\n  {\n    json: {\n      otp_code: otp,\n      expired_at: toLocalMySQLDateTime(expiredAt),\n      created_at: toLocalMySQLDateTime(now)\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -496,
+        -432
+      ],
+      "id": "c1e545c2-210b-410d-893a-92e38cf16bd9",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "user_otps",
+          "mode": "list",
+          "cachedResultName": "user_otps"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "otp_code",
+              "value": "={{ $json.otp_code }}"
+            },
+            {
+              "column": "expired_at",
+              "value": "={{ $json.expired_at }}"
+            },
+            {
+              "column": "created_at",
+              "value": "={{ $json.created_at }}"
+            },
+            {
+              "column": "user_id",
+              "value": "={{ $('Select rows from a table').item.json.data[0].id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -272,
+        -432
+      ],
+      "id": "8d89e32d-b456-4618-aaa5-b09a44191913",
+      "name": "Insert rows in a table3",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('If1').item.json.email }}",
+        "subject": "otp verifikasi ",
+        "message": "={{ $('Code1').item.json.otp_code }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        176,
+        -432
+      ],
+      "id": "f37a99d1-f3ac-4999-8ac8-2e328b2eed5f",
+      "name": "Send a message",
+      "webhookId": "3798745d-a310-4f4a-97b9-fdbaadb10406",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "A0kR6KDbZM4fYEND",
+          "name": "MamamMewing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "user_otps",
+          "mode": "list",
+          "cachedResultName": "user_otps"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "user_id",
+              "value": "={{ $json.data[0].id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1168,
+        -48
+      ],
+      "id": "9c6ffa28-9cc6-45d7-96bf-20ff451e14da",
+      "name": "Select rows from a table1",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Ambil waktu sekarang\nconst now = new Date();\n\n// Bandingkan dengan expired_at dari database\nif ($('Telegram Trigger').first().json.message.text === $input.first().json.otp_code && \n    now < new Date($input.first().json.expired_at)) {\n  // OTP valid\n  return [{ json: { status: 'success', message: 'OTP valid' } }];\n} else {\n  // OTP salah atau expired\n  return [{ json: { status: 'error', message: 'OTP invalid atau expired' } }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -944,
+        -48
+      ],
+      "id": "da276ab2-24ff-4d58-83fa-ab9a99ae5c3f",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b77d23a8-66b2-4a7c-83c7-67d408ecabc9",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "success",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -720,
+        -48
+      ],
+      "id": "99b99bd7-dcb4-4025-8ab9-4aff3562c055",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "user_otps",
+          "mode": "list",
+          "cachedResultName": "user_otps"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $('Select rows from a table1').item.json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -496,
+        -48
+      ],
+      "id": "be3a20d6-5e07-429e-9bb6-055213688ee2",
+      "name": "Delete table or rows",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $('Select rows from a table').item.json.data[0].id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "status",
+              "value": "VERIFIED"
+            },
+            {
+              "column": "is_verified",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -272,
+        -48
+      ],
+      "id": "43fc06bc-1686-4f39-9589-3e94625543d6",
+      "name": "Update rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "=Mantap kamu telah lolos verifikasi, profle mu sekarang :\nname : {{ $json.username }}\nemail : {{ $json.email }}\nstatus : {{ $json.is_verified === 1 ? '✅ Terverifikasi' : '❌ Belum Terverifikasi' }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        176,
+        -48
+      ],
+      "id": "c20d09c6-0dd8-454c-9ed7-cfb2591acb35",
+      "name": "Send a text message7",
+      "webhookId": "e972f352-37af-4d01-9209-4a02d2cf0cfc",
+      "credentials": {
+        "telegramApi": {
+          "id": "WxqGwzkk17GbQNTL",
+          "name": "wqiuwoql_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $('Select rows from a table').item.json.data[0].id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -48,
+        -48
+      ],
+      "id": "0c23cb94-ad71-45d6-822f-8940bd4a289b",
+      "name": "Select rows from a table2",
+      "credentials": {
+        "mySql": {
+          "id": "7cs0BYKJUoyFfM0W",
+          "name": "gqfgkfuqyyk_db"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-15T15:03:49.191Z",
+      "updatedAt": "2025-09-15T15:03:49.191Z",
+      "role": "workflow:owner",
+      "workflowId": "QFShzEK35JSCtnf8",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-16T02:23:27.000Z",
+  "versionId": "d0d9c126-a9b5-48fb-bdd5-ebe010d3ab5f"
+}
