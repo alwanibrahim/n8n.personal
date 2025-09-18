@@ -1,0 +1,333 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "TOTP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-14T12:17:43.343Z",
+  "id": "Z6jJCGUij58krA4u",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "merge gk jelas",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -688,
+        112
+      ],
+      "id": "0f0dd03c-753c-4c5c-a274-7b315d449149",
+      "name": "Telegram Trigger",
+      "webhookId": "72374931-e44d-415a-88c8-aaa68c4dea9d",
+      "credentials": {
+        "telegramApi": {
+          "id": "OPrz3OqVHj3zy7dL",
+          "name": "sakhiafli_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combineBySql",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        80,
+        112
+      ],
+      "id": "9f5497b9-91e7-4f1b-a7d7-5b835312015d",
+      "name": "Merge",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "459756a0-fd98-441c-afa9-2b426af970e3",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/start"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/name",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "d9fd95ba-cfab-478d-9f7b-2ce87303ff08"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/name"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7f64cca8-29f8-4e65-848e-07f01b89a700",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/email",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/email"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -464,
+        80
+      ],
+      "id": "5ac27e3e-247b-4c93-86b6-7cef6176fc46",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "masukkan email anda: ",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        16
+      ],
+      "id": "ce070bd1-b1c6-4dae-a2a5-c3bbb4bbe043",
+      "name": "Send a text message",
+      "webhookId": "6d235b66-1d3c-4d73-b6f8-f0daab6830ea",
+      "credentials": {
+        "telegramApi": {
+          "id": "OPrz3OqVHj3zy7dL",
+          "name": "sakhiafli_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "data sedang di proses..",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -224,
+        256
+      ],
+      "id": "f8fb15cc-8110-435c-95ac-be604929f3a3",
+      "name": "Send a text message1",
+      "webhookId": "6d235b66-1d3c-4d73-b6f8-f0daab6830ea",
+      "credentials": {
+        "telegramApi": {
+          "id": "OPrz3OqVHj3zy7dL",
+          "name": "sakhiafli_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "masukkan nama anda: ",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        -176
+      ],
+      "id": "4558e700-3951-4b3f-98d3-aeafa8d9423b",
+      "name": "Send a text message2",
+      "webhookId": "6d235b66-1d3c-4d73-b6f8-f0daab6830ea",
+      "credentials": {
+        "telegramApi": {
+          "id": "OPrz3OqVHj3zy7dL",
+          "name": "sakhiafli_bot"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -768,
+        416
+      ],
+      "id": "018ba52e-99bd-4089-92f9-80ba406bd2ac",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.totp",
+      "typeVersion": 1,
+      "position": [
+        288,
+        112
+      ],
+      "id": "0f4f5301-43ea-4042-a1a5-55134b8b34b1",
+      "name": "TOTP"
+    },
+    {
+      "parameters": {
+        "operation": "keys"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        560,
+        192
+      ],
+      "id": "944f78c9-a790-4fff-ae91-0981a20bb446",
+      "name": "Redis"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-14T12:17:43.354Z",
+      "updatedAt": "2025-09-14T12:17:43.354Z",
+      "role": "workflow:owner",
+      "workflowId": "Z6jJCGUij58krA4u",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-16T02:25:57.000Z",
+  "versionId": "75b2e78b-443d-40e9-a36f-4fa8f61a8b36"
+}
