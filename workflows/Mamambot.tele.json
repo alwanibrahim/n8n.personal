@@ -1,0 +1,714 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram": {
+      "main": [
+        [
+          {
+            "node": "Get data from db",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch status user": {
+      "main": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "Basic Register",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get data from db": {
+      "main": [
+        [
+          {
+            "node": "Switch status user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic Register": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Opening",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-18T02:05:30.784Z",
+  "id": "hRNPmxc6BFklyu6i",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Mamam.bot.tele",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "18ff6434-60f9-4983-af4f-23877402c536",
+      "name": "Telegram",
+      "webhookId": "f046c686-1440-46fb-b9d7-ce7be2e09e53",
+      "credentials": {
+        "telegramApi": {
+          "id": "uWC0ymsEKzmYGrsU",
+          "name": "Mamam.developer.bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "chat_id",
+              "value": "={{ $('Telegram').item.json.message.chat.id }}"
+            },
+            {
+              "column": "username",
+              "value": "={{ $('Telegram').item.json.message.chat.username }}"
+            },
+            {
+              "column": "status",
+              "value": "IDLE"
+            },
+            {
+              "column": "is_verified",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        816,
+        128
+      ],
+      "id": "dc5e231d-d838-4a05-a530-db426efaabfd",
+      "name": "Basic Register",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "IDLE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9b00dbce-1144-4437-bffa-f3ddc825fcf8"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "IDLE"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0c77a72b-f324-45de-9f59-8cc7ff00ed74",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_EMAIL",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_EMAIL"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e9d7626e-3696-400b-ba3d-1e80694a8f59",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_OTP",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_OTP"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7daff115-6f65-4a38-b4c7-fae51a827fb7",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_PHONE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_PHONE"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2081e90e-7a14-4b55-afb0-1a49d5387fb7",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_ADDRESS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_ADDRESS"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3a77b550-68de-456f-8ac1-a2374b4a7337",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "WAITING_APPROVAL",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WAITING_APPROVAL"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "91338592-c06c-430f-8ad9-07c5fa765b82",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "VERIFIED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "VERIFIED"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "66f16421-9c7f-4f10-b263-0417b17b8f00",
+                    "leftValue": "={{ $json.data[0].status }}",
+                    "rightValue": "BLOCKED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "BLOCKED"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        448,
+        -112
+      ],
+      "id": "deef2175-30c8-47d0-8444-e2610d10df59",
+      "name": "Switch status user"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "=id",
+              "value": "={{ $json.message.chat.id }}{{ $json.callback_query.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "aeba7d63-2109-4c6d-ada5-be0ece38136c",
+      "name": "Get data from db",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram').item.json.message.chat.id }}",
+        "binaryData": true,
+        "replyMarkup": "replyKeyboard",
+        "replyKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "List product",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "Stock",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "1",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "2",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "3",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "4",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "5",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "6",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "7",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "8",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "9",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "10",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Informasi",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "Cara order",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "Deposit",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {
+          "resize_keyboard": true
+        },
+        "additionalFields": {
+          "caption": "={{ $json.message }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1248,
+        128
+      ],
+      "id": "fd2ce056-4fd7-42c2-a0af-8213cc807e8d",
+      "name": "Opening",
+      "webhookId": "d7b9dca8-5fcf-4c1e-83e6-5dfe30ace08d",
+      "credentials": {
+        "telegramApi": {
+          "id": "uWC0ymsEKzmYGrsU",
+          "name": "Mamam.developer.bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8b14c7f7-26c0-4d5c-99fa-a911bd9fcee2",
+              "name": "message",
+              "value": "Selamat datang di toko Mamam mewing \ndisini kalian akan menemukan product app premium\nketik atau tekan :\n/list - untuk melihat product yang tersedia\n/stock - untuk melihat stock product\n/informasi - untuk melihat profile user\n/cara_order - untuk melihat tutorial order\n/deposit - untuk mengisi saldo ",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        128
+      ],
+      "id": "908558c1-71e9-410f-9e20-b424b6953c5d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram').item.json.message.chat.id }}",
+        "text": "=",
+        "replyMarkup": "replyKeyboard",
+        "replyKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "List product",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "Stock",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "1",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "2",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "3",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "4",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "5",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "6",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "7",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "8",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "9",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "10",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Informasi",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "Cara order",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "Deposit",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {
+          "resize_keyboard": true
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        336
+      ],
+      "id": "f1a1076d-fa64-4d1b-9899-81f9e05dd0f5",
+      "name": "Opening1",
+      "webhookId": "d7b9dca8-5fcf-4c1e-83e6-5dfe30ace08d",
+      "credentials": {
+        "telegramApi": {
+          "id": "uWC0ymsEKzmYGrsU",
+          "name": "Mamam.developer.bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "195xzT2TZm4y8MfKj88hMalRHDz91kv25",
+          "mode": "list",
+          "cachedResultName": "app_premium.png",
+          "cachedResultUrl": "https://drive.google.com/file/d/195xzT2TZm4y8MfKj88hMalRHDz91kv25/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1104,
+        128
+      ],
+      "id": "187e9afd-08e4-4e12-970f-c133ed46babd",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uwKWWiaSURBtcVFx",
+          "name": "alwanibrahim142"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-18T02:05:30.793Z",
+      "updatedAt": "2025-09-18T02:05:30.793Z",
+      "role": "workflow:owner",
+      "workflowId": "hRNPmxc6BFklyu6i",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-18T08:48:43.000Z",
+  "versionId": "7ad4d7c2-0e88-4129-8cd2-a66d26efe9e4"
+}
