@@ -1,0 +1,379 @@
+{
+  "active": true,
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "data pesan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark message as read": {
+      "main": [
+        [
+          {
+            "node": "Send chat presence typing indicator1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send chat presence typing indicator1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Mark message as read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-12T11:05:27.913Z",
+  "id": "H4ytCLAl6JZkXAM4",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "bot wa untuk dashboard nya ada di telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json.body.message.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -448,
+        -96
+      ],
+      "id": "6c91c08d-c776-49a9-9ba8-849ee7a9b18d",
+      "name": "data pesan",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5758db41-ce8f-4dac-98c9-567ab1c4b3f6",
+              "name": "body.message.text",
+              "value": "={{ $json.body.message.text.toUpperCase() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -672,
+        -96
+      ],
+      "id": "25415b79-6678-4241-8826-485dd46132c7",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "sendChatPresence",
+        "phoneNumber": "={{ $json.body.from }}",
+        "chatPresenceAction": "stop"
+      },
+      "type": "@aldinokemal2104/n8n-nodes-gowa.gowa",
+      "typeVersion": 1,
+      "position": [
+        -672,
+        -320
+      ],
+      "id": "f8c9fc9f-2f35-4d86-8ee5-e9a194676c03",
+      "name": "Send chat presence typing indicator",
+      "credentials": {
+        "goWhatsappApi": {
+          "id": "8ukKl9mQNIoYPn3U",
+          "name": "gowapersonal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Webhook').item.json.body.from.split(\" \").first() }}",
+                    "rightValue": "6285941225394@s.whatsapp.net",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "da79b744-dc6f-40d8-adf6-0ee138b35c6f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/sayasendiri"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        0,
+        128
+      ],
+      "id": "a92c6481-7eee-45e0-a982-1ce2589a88c2",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        224,
+        128
+      ],
+      "id": "fb21cf0e-9de5-4eba-90d1-d7cc51808091",
+      "name": "Select rows from a table",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Webhook').item.json.body.message.text }}",
+                    "rightValue": "={{ $json.pesan }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f6f5fc43-b4d9-4707-8e57-20b5a6bc88ed"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/balasan"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        448,
+        128
+      ],
+      "id": "23339483-ba41-4b56-a17e-4794ef2bb527",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "phoneNumber": "={{ $('Webhook').item.json.body.chat_id }}@s.whatsapp.net",
+        "message": "={{ $json.balasan }}"
+      },
+      "type": "@aldinokemal2104/n8n-nodes-gowa.gowa",
+      "typeVersion": 1,
+      "position": [
+        672,
+        128
+      ],
+      "id": "0c27f037-deaa-4581-9443-cea33b8254e8",
+      "name": "Send a text message",
+      "credentials": {
+        "goWhatsappApi": {
+          "id": "8ukKl9mQNIoYPn3U",
+          "name": "gowapersonal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "readMessage",
+        "phoneOrGroupId": "={{ $json.body.chat_id }}@s.whatsapp.net",
+        "messageId": "={{ $json.body.message.id }}"
+      },
+      "type": "@aldinokemal2104/n8n-nodes-gowa.gowa",
+      "typeVersion": 1,
+      "position": [
+        -448,
+        128
+      ],
+      "id": "31069673-2de4-4900-9c34-131cf793ba88",
+      "name": "Mark message as read",
+      "credentials": {
+        "goWhatsappApi": {
+          "id": "8ukKl9mQNIoYPn3U",
+          "name": "gowapersonal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendChatPresence",
+        "phoneNumber": "={{ $('Webhook').item.json.body.chat_id }}"
+      },
+      "type": "@aldinokemal2104/n8n-nodes-gowa.gowa",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        128
+      ],
+      "id": "3061480f-0aaa-4ec4-99d5-af88b0ad5c23",
+      "name": "Send chat presence typing indicator1",
+      "credentials": {
+        "goWhatsappApi": {
+          "id": "8ukKl9mQNIoYPn3U",
+          "name": "gowapersonal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "1e42477b-3a17-4445-839f-3e5845304551",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -752,
+        176
+      ],
+      "id": "40be088a-0d42-4df1-a3c9-e5631448f329",
+      "name": "Webhook",
+      "webhookId": "1e42477b-3a17-4445-839f-3e5845304551"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-12T11:05:27.921Z",
+      "updatedAt": "2025-09-12T11:05:27.921Z",
+      "role": "workflow:owner",
+      "workflowId": "H4ytCLAl6JZkXAM4",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-16T02:25:48.000Z",
+  "versionId": "9d847bf3-76e4-4b72-a4b5-cf5505848df1"
+}
