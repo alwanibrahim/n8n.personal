@@ -1,0 +1,711 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Google Sheet Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SQL Get inquiries from Google",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [
+          {
+            "node": "Add MySQL records",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No reply too long?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DB Status assigned?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DB Status in sync?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Google Sheet Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SQL Get inquiries from Google",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheet Data": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SQL Get inquiries from Google": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "No reply too long?": {
+      "main": [
+        [
+          {
+            "node": "Send Notifications",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DB Status assigned?": {
+      "main": [
+        [
+          {
+            "node": "Update GSheet status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DB Status in sync?": {
+      "main": [
+        [
+          {
+            "node": "Sync MySQL data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Google Sheet Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SQL Get inquiries from Google",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add MySQL records": {
+      "main": [
+        []
+      ]
+    },
+    "Update GSheet status": {
+      "main": [
+        []
+      ]
+    },
+    "Sync MySQL data": {
+      "main": [
+        [
+          {
+            "node": "Ambil status yang terhapus",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Notifications": {
+      "main": [
+        []
+      ]
+    },
+    "Ambil status yang terhapus": {
+      "main": [
+        [
+          {
+            "node": "Delete data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-18T02:41:02.339Z",
+  "id": "q7pRJVLPxg8sqdGL",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Model pesan",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "97f4e6fe-528a-48a1-a55b-ce1dac9a0828",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -960,
+        16
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "id",
+              "field2": "id"
+            },
+            {
+              "field1": "pesan",
+              "field2": "pesan"
+            }
+          ]
+        },
+        "options": {
+          "skipFields": "record_created,record_updated,id"
+        }
+      },
+      "id": "1677be13-0288-4350-ba8c-31f36f60b477",
+      "name": "Compare Datasets",
+      "type": "n8n-nodes-base.compareDatasets",
+      "position": [
+        -288,
+        -256
+      ],
+      "typeVersion": 2.3
+    },
+    {
+      "parameters": {},
+      "id": "001c481c-526d-43f9-b0fd-d86b3e30d7a7",
+      "name": "Send Notifications",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        160,
+        -320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds",
+              "secondsInterval": 5
+            }
+          ]
+        }
+      },
+      "id": "a2f3cc6f-ebeb-4b97-9eb4-ff667203c933",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        -960,
+        -224
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+          "mode": "list",
+          "cachedResultName": "Mysql Model pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit#gid=0"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "8bc709de-283e-4d8f-b1d8-5632e3e33b1c",
+      "name": "Google Sheet Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        -736,
+        -320
+      ],
+      "typeVersion": 4,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Fh4yfkJ9NyUgrun0",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "1cce028a-14ee-4029-9362-6760263a3668",
+      "name": "SQL Get inquiries from Google",
+      "type": "n8n-nodes-base.mySql",
+      "position": [
+        -736,
+        -128
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json.pesan }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ $json.balasan }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "de93897b-4a87-4942-8fac-7485b8ec0094",
+      "name": "Add MySQL records",
+      "type": "n8n-nodes-base.mySql",
+      "position": [
+        -64,
+        -512
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{ DateTime.fromFormat($json.timestamp, 'M/d/yyyy H:mm:ss').toISO() }}",
+              "operation": "before",
+              "value2": "={{ DateTime.now().minus({ hours: 4 }).toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ec3baeb8-86a9-4c9b-8f09-a44be913f90c",
+      "name": "No reply too long?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -64,
+        -320
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.different?.db_status?.inputB }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4b4fcd13-541b-4381-919a-455ac77f8a27",
+      "name": "DB Status assigned?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -64,
+        -128
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+          "mode": "list",
+          "cachedResultName": "Mysql Model pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "032f159c-901f-43eb-a184-a7bf7d756add",
+      "name": "Update GSheet status",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        160,
+        -128
+      ],
+      "typeVersion": 4,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Fh4yfkJ9NyUgrun0",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.source_name }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "43bfa6d3-adaf-4013-b72d-70772feaf0f9",
+      "name": "DB Status in sync?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -64,
+        64
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json.pesan }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ $json.balasan }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1fae24df-121e-4d78-97fc-df997cdfb4b6",
+      "name": "Sync MySQL data",
+      "type": "n8n-nodes-base.mySql",
+      "position": [
+        160,
+        64
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dc142950-f36c-47cc-95bd-8bd014f2286e",
+              "name": "id",
+              "value": "={{ $json['\"'] }}",
+              "type": "string"
+            },
+            {
+              "id": "d5f82e2c-7093-4d31-858a-c85c779726dd",
+              "name": "pesan",
+              "value": "={{ $json.pesan }}",
+              "type": "string"
+            },
+            {
+              "id": "24041950-84f2-460a-bc51-2d30cdd45489",
+              "name": "balasan",
+              "value": "={{ $json.balasan }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -512,
+        -320
+      ],
+      "id": "9cdcee2c-5ea7-484d-82f0-c05ecda1a954",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+          "mode": "list",
+          "cachedResultName": "Mysql Model pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -992,
+        -464
+      ],
+      "id": "46c82fa5-badb-4bde-bc15-443b8830ece6",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "72lUJdXDjMFLTFLR",
+          "name": "Alwanibrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+          "mode": "list",
+          "cachedResultName": "Mysql Model pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "status",
+              "lookupValue": "Terhapus"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        640,
+        -240
+      ],
+      "id": "268de23c-41d7-4538-bc11-ab06c1f62029",
+      "name": "Ambil status yang terhapus",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Fh4yfkJ9NyUgrun0",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json['\"'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        848,
+        -240
+      ],
+      "id": "a830b600-8542-478d-9e38-7e73a6be45a8",
+      "name": "Delete data",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-18T02:41:02.349Z",
+      "updatedAt": "2025-09-18T02:41:02.349Z",
+      "role": "workflow:owner",
+      "workflowId": "q7pRJVLPxg8sqdGL",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    },
+    "node:Google Sheets Trigger": {
+      "documentId": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+      "sheetId": 0,
+      "lastRevision": 139,
+      "lastRevisionLink": "https://docs.google.com/spreadsheets/export?id=1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po&revision=139&exportFormat=xlsx"
+    }
+  },
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-09-18T07:35:18.000Z",
+  "versionId": "848f459a-6374-4b1f-8956-403c4bb36b9e"
+}
