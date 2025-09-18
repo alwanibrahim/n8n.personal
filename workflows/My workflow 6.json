@@ -1,0 +1,65 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-14T09:27:55.822Z",
+  "id": "eNq69cZVUuVPiczQ",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 6",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "381a026c-e614-47ce-83c0-9a293ec4b10d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// coba require library\nconst TelegramBot = require('node-telegram-bot-api');\n\n// bikin instance dummy (token palsu gapapa, cuma buat test require)\nconst bot = new TelegramBot('123456:FAKE-TOKEN', { polling: false });\n\n// return nama class biar keliatan berhasil\nreturn [{ result: typeof bot }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f68106e1-b309-4a7f-96e6-463c5418d1b2",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-14T09:27:55.835Z",
+      "updatedAt": "2025-09-14T09:27:55.835Z",
+      "role": "workflow:owner",
+      "workflowId": "eNq69cZVUuVPiczQ",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-14T09:34:15.000Z",
+  "versionId": "350fe11f-9c21-4bc0-94c7-e8a457fa9197"
+}
