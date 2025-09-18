@@ -1,0 +1,313 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-09T08:48:37.668Z",
+  "id": "iEPAvvoqggjG0kCk",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "untuk generate transaction",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "398f6dc6-93b2-489d-bb27-4036d4817128",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -304,
+        -144
+      ],
+      "id": "7d9693b5-be2c-4301-b28b-59b3c318de9e",
+      "name": "Webhook",
+      "webhookId": "398f6dc6-93b2-489d-bb27-4036d4817128"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://tripay.co.id/api-sandbox/transaction/create",
+        "sendHeaders": true,
+        "specifyHeaders": "json",
+        "jsonHeaders": "{\n  \"Authorization\": \"Bearer DEV-zggTtPraDOJ1Nl9qvBxKygPkFfX5GQ2RIYOXLZpk\",\n  \"Content-Type\": \"application/json\"\n}\n",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"method\": \"QRIS\",\n  \"merchant_ref\": \"T38800\",\n  \"amount\": 60000,\n  \"customer_name\": \"{{ $json.body.email }}\",\n  \"customer_email\": \"{{ $json.body.email }}\",\n  \"customer_phone\": \"081234202356\",\n  \"order_items\": [\n    {\n      \"sku\": \"CP001\",\n      \"name\": \"CapCut Premium\",\n      \"price\": 60000,\n      \"quantity\": 1\n    }\n  ],\n  \"callback_url\": \"https://n8n.yourdomain.com/webhook/tripay-callback\",\n  \"return_url\": \"https://yourfrontend.com/payment-success\",\n  \"expired_time\": 1736467200,\n  \"signature\": \"978f2049bee4732db4218c77ac79a2464188362bbe4361ef3ede2da7e8ae704c\"\n}\n ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -144,
+        -144
+      ],
+      "id": "5fd531f0-a1fe-4bb3-896b-9041e1ba3037",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"checkout_url\": \"={{$json.data.checkout_url}}\",\n  \"qr_url\": \"={{$json.data.qr_url}}\"\n}\n",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        -144
+      ],
+      "id": "cedf877e-5a18-4dd1-9def-150a518ef7c8",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "43e3e2cd-b0b2-4a86-ba03-40d0d2ae0422",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -464,
+        112
+      ],
+      "id": "b5843e1e-141c-4c37-a761-9aa2a944cbbb",
+      "name": "Webhook1",
+      "webhookId": "43e3e2cd-b0b2-4a86-ba03-40d0d2ae0422"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "Capcut Pro",
+        "emailType": "text",
+        "message": "selamat kamu mendapatkan capcut pro,\nsilahkan login dengan account ini:\n\nemail: mamam@gmail.com\npassword: masuk123",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        128,
+        112
+      ],
+      "id": "dd7dc47d-8686-491f-ac72-fd9ec6a6ed5c",
+      "name": "Send a message",
+      "webhookId": "f1876761-f0b0-4ba0-9c9b-bc6c48355745",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6SNozMI0XBOhMl21",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "data",
+          "mode": "list",
+          "cachedResultName": "data"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "reference",
+              "value": "={{ $json.data.reference }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $('Webhook').item.json.body.email }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        208,
+        -144
+      ],
+      "id": "76fe76c3-630b-4e3a-84a2-5d36edc11cc6",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "wluraYPR2Mni7DoN",
+          "name": "MySQL account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "data",
+          "mode": "list",
+          "cachedResultName": "data"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "reference",
+              "value": "={{ $json.body.reference }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -304,
+        96
+      ],
+      "id": "4786550c-1e03-4bea-a601-55f4284c7428",
+      "name": "Select rows from a table",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "wluraYPR2Mni7DoN",
+          "name": "MySQL account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "713a3d70-e5d3-4666-a842-7190e1e30113",
+              "leftValue": "={{ $('Webhook1').item.json.body.status }}",
+              "rightValue": "PAID",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "4db4425b-9c04-45e3-8871-c93a4846b4a9",
+              "leftValue": "={{ $('Webhook1').item.json.body.reference }}",
+              "rightValue": "={{ $json.reference }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -128,
+        160
+      ],
+      "id": "1f785e14-e914-49c3-9887-22a7ab3f33c4",
+      "name": "If"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-09T08:48:37.675Z",
+      "updatedAt": "2025-09-09T08:48:37.675Z",
+      "role": "workflow:owner",
+      "workflowId": "iEPAvvoqggjG0kCk",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-09-11T13:15:26.000Z",
+  "versionId": "5fa49af3-5fb2-4513-be3b-c1f10c71caf9"
+}
