@@ -1,0 +1,2527 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        []
+      ]
+    },
+    "Users": {
+      "main": [
+        [
+          {
+            "node": "Get User db",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add User",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit User1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send message and wait for response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add User": {
+      "main": [
+        [
+          {
+            "node": "Add User db",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add User db": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get User db": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit User": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit User1": {
+      "main": [
+        [
+          {
+            "node": "Edit User",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response": {
+      "main": [
+        [
+          {
+            "node": "Delete User db",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete User db": {
+      "main": [
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add User db1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response1": {
+      "main": [
+        [
+          {
+            "node": "Delete Categori db1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Categories": {
+      "main": [
+        [
+          {
+            "node": "Get  Categories db1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Categori",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Categori",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send message and wait for response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get  Categories db1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Categori": {
+      "main": [
+        [
+          {
+            "node": "Add User db1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Categori": {
+      "main": [
+        [
+          {
+            "node": "Edit  Categori db",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit  Categori db": {
+      "main": [
+        [
+          {
+            "node": "Send a text message6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Categori db1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response2": {
+      "main": [
+        [
+          {
+            "node": "Delete product db",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Products": {
+      "main": [
+        [
+          {
+            "node": "Get  Products db",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Products",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Products1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send message and wait for response2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get  Products db": {
+      "main": [
+        [
+          {
+            "node": "Send a text message9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Products": {
+      "main": [
+        [
+          {
+            "node": "Add Categori db2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Categori db2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a text message12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message12": {
+      "main": [
+        []
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Users",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Categories",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Products",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Products1": {
+      "main": [
+        [
+          {
+            "node": "Edit  Product db1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit  Product db1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete product db": {
+      "main": [
+        [
+          {
+            "node": "Send a text message11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-11T13:11:56.030Z",
+  "id": "Aw72mAhYLrB3MYvD",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "konfigurasi bot wa melalui tele",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "*",
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2912,
+        -320
+      ],
+      "id": "b3b0686b-3626-40db-875a-c0b0964fa9f6",
+      "name": "Telegram Trigger",
+      "webhookId": "b100edfd-d7ff-4d14-ae8c-63bcc0a296e3",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "executeOnce": false,
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json['nama pesan :'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1472,
+        1568
+      ],
+      "id": "e3fa6557-ce6b-40e1-be9a-c963b1576cc1",
+      "name": "Insert rows in a table1",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1472,
+        1344
+      ],
+      "id": "f70ecadc-01c2-4943-9f79-6e9e0bd72441",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/getUsers",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f07e0cb2-72df-4602-a30e-c08126b13d84"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/getUsers"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "db616120-0d8c-4e73-8f47-8f077f1b75a1",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/addUser",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/addUser"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1ee9e397-95f2-4b85-a4e6-6d9ef135ea89",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/editUser",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/editUser"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b348759d-7dbc-47ce-bd83-c85308fa0ffa",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/deleteUser",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/deleteUser"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1936,
+        -928
+      ],
+      "id": "24b97585-e677-4837-ab37-da2df9dca13a",
+      "name": "Users"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/getCategories",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f07e0cb2-72df-4602-a30e-c08126b13d84"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/getCategories"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "db616120-0d8c-4e73-8f47-8f077f1b75a1",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/addCategory",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/addCategory"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1ee9e397-95f2-4b85-a4e6-6d9ef135ea89",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/editCategory",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/editCategory"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b348759d-7dbc-47ce-bd83-c85308fa0ffa",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/deleteCategory",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/deleteCategory"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1248,
+        -368
+      ],
+      "id": "5d3ae892-6269-4cfc-a5c3-d3a96ca36a30",
+      "name": "Categories"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/getProducts",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f07e0cb2-72df-4602-a30e-c08126b13d84"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/getProducts"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "db616120-0d8c-4e73-8f47-8f077f1b75a1",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/addProduct",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/addProduct"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1ee9e397-95f2-4b85-a4e6-6d9ef135ea89",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/editProduct",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/editProduct"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b348759d-7dbc-47ce-bd83-c85308fa0ffa",
+                    "leftValue": "={{ $json.message.text }}{{ $json.callback_query.data }}",
+                    "rightValue": "/deleteProduct",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/deleteProduct"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1392,
+        304
+      ],
+      "id": "5d2fbd43-35d7-4396-9b2e-1a91883a6266",
+      "name": "Products"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Masukkan Nama User :",
+              "placeholder": "Nama User",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email :",
+              "placeholder": "Email"
+            },
+            {
+              "fieldLabel": "Role",
+              "fieldType": "checkbox",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "user"
+                  },
+                  {
+                    "option": "admin"
+                  },
+                  {
+                    "option": "affiliate"
+                  }
+                ]
+              },
+              "limitSelection": "exact"
+            },
+            {
+              "fieldLabel": "Status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Active"
+                  },
+                  {
+                    "option": "Banned"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "User Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1712,
+        -976
+      ],
+      "id": "bcb96bee-acaa-4a13-982b-62d3fd936827",
+      "name": "Add User",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "username",
+              "value": "={{ $json.data['Masukkan Nama User :'] }}"
+            },
+            {
+              "column": "nama_lengkap",
+              "value": "={{ $json.data['Masukkan Nama User :'] }}"
+            },
+            {
+              "column": "role",
+              "value": "={{ $json.data.Role[0] }}"
+            },
+            {
+              "column": "status",
+              "value": "={{ $json.data.Status }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1488,
+        -976
+      ],
+      "id": "01f0fb2d-da5f-40a0-affb-bee1cfe2b7be",
+      "name": "Add User db",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1712,
+        -1168
+      ],
+      "id": "90c83fd6-86bc-45ee-b36a-6b79bfea265a",
+      "name": "Get User db",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menambahkan User :\n\nNama: {{ $('Add User').item.json.data['Masukkan Nama User :'] }}\nEmail: {{ $('Add User').item.json.data['Email :'] }}\nRole: {{ $('Add User').item.json.data.Role[0] }}\nStatus: {{ $('Add User').item.json.data.Status }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1264,
+        -976
+      ],
+      "id": "949c194e-cf11-4447-ba1c-8c5a1358a967",
+      "name": "Send a text message",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "=[\n  {\n    \"id\": {{ $json.id }},\n    \"telegram_id\":{{ $json.telegram_id }} ,\n    \"username\": \"{{ $json.username }}\",\n    \"nama_lengkap\": \"{{ $json.nama_lengkap }}\",\n    \"email\": {{ $json.email }},\n    \"role\": \"{{ $json.role }}\",\n    \"status\": \"{{ $json.status }}\",\n    \"created_at\": \"{{ $json.created_at }}\",\n    \"updated_at\": \"{{ $json.updated_at }}\"\n  }\n]",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1488,
+        -1168
+      ],
+      "id": "aa8fe3cb-21ff-4146-acdf-e5f0330807fd",
+      "name": "Send a text message1",
+      "webhookId": "6d1d7612-a380-4880-9c3b-25f1189ca910",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.data.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "username",
+              "value": "={{ $json.data['Masukkan Nama User :'] }}"
+            },
+            {
+              "column": "nama_lengkap",
+              "value": "={{ $json.data['Masukkan Nama User :'] }}"
+            },
+            {
+              "column": "role",
+              "value": "={{ $json.data.Role[0] }}"
+            },
+            {
+              "column": "status",
+              "value": "={{ $json.data.Status }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1488,
+        -784
+      ],
+      "id": "2b6798d6-dab9-441b-bcfc-fa49a51d232e",
+      "name": "Edit User",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Masukkan Nama User :",
+              "placeholder": "Nama User",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email :",
+              "placeholder": "Email"
+            },
+            {
+              "fieldLabel": "Role",
+              "fieldType": "checkbox",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "user"
+                  },
+                  {
+                    "option": "admin"
+                  },
+                  {
+                    "option": "affiliate"
+                  }
+                ]
+              },
+              "limitSelection": "exact"
+            },
+            {
+              "fieldLabel": "Status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Active"
+                  },
+                  {
+                    "option": "Banned"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "User Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1712,
+        -784
+      ],
+      "id": "b5fc0372-d7ea-4213-b6c0-5570a4ebd5bc",
+      "name": "Edit User1",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "6352808441",
+        "message": "Masukkan id data yang ingin di Hapus :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "placeholder": "number id",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This Button",
+          "responseFormCustomCss": ":root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1712,
+        -592
+      ],
+      "id": "0fd96b07-9055-4567-a13a-a30ac6b9f5ef",
+      "name": "Send message and wait for response",
+      "webhookId": "9b64b561-70cb-42d3-b0ac-f488fca2a628",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.data.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1488,
+        -592
+      ],
+      "id": "3e823e17-c53d-4523-b863-28b8dc05cf44",
+      "name": "Delete User db",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Mengedit User :\n\nNama: {{ $('Edit User1').item.json.data['Masukkan Nama User :'] }}\nEmail: {{ $('Edit User1').item.json.data['Email :'] }}\nRole: {{ $('Edit User1').item.json.data.Role[0] }}\nStatus: {{ $('Edit User1').item.json.data.Status }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1264,
+        -784
+      ],
+      "id": "23fb762b-9495-4f32-bea2-1ee63b28302f",
+      "name": "Send a text message2",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menghapus User :\n\nDengan ID: {{ $('Send message and wait for response').item.json.data.id }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1264,
+        -592
+      ],
+      "id": "7105e743-58ef-4e6d-905f-4db550dad46c",
+      "name": "Send a text message3",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "categories",
+          "mode": "list",
+          "cachedResultName": "categories"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nama_kategori",
+              "value": "={{ $json.data[\"Masukkan Nama Kategori\"] }}"
+            },
+            {
+              "column": "deskripsi",
+              "value": "={{ $json.data.Deskripsi }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -800,
+        -432
+      ],
+      "id": "b461affc-f21d-4c3c-91bd-42f48cdd7e39",
+      "name": "Add User db1",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menambahkan Categori :\n\nNama: {{ $('Add Categori').item.json.data[\"Masukkan Nama Kategori\"] }}\nDeskripsi: {{ $('Add Categori').item.json.data.Deskripsi }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -576,
+        -432
+      ],
+      "id": "109bbecc-4cc6-4145-abe2-e72fe1f37adc",
+      "name": "Send a text message4",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "=[\n  {\n    \"id\": {{ $json.id }},\n    \"nama_kategori\": \"{{ $json.nama_kategori }}\",\n    \"deskripsi\": \"{{ $json.deskripsi }}\",\n    \"created_at\": \"{{ $json.created_at }}\"\n  }\n]",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -800,
+        -624
+      ],
+      "id": "a6b6df3f-61f6-49fc-a331-a0ba8512e80b",
+      "name": "Send a text message5",
+      "webhookId": "6d1d7612-a380-4880-9c3b-25f1189ca910",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "6352808441",
+        "message": "Masukkan id data yang ingin di Hapus :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "placeholder": "number id",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This Button",
+          "responseFormCustomCss": ":root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1024,
+        -48
+      ],
+      "id": "831124eb-bff2-4520-8cd4-0485fa27c456",
+      "name": "Send message and wait for response1",
+      "webhookId": "9b64b561-70cb-42d3-b0ac-f488fca2a628",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Mengedit Categori :\n\nNama: {{ $('Edit Categori').item.json.data.nama }}\nDeskripsi: {{ $('Edit Categori').item.json.data.deskripsi }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -576,
+        -240
+      ],
+      "id": "40cc9925-c64d-477c-a6bc-1ac726019f66",
+      "name": "Send a text message6",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menghapus Categori :\n\nDengan ID: {{ $('Send message and wait for response1').item.json.data.id }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -576,
+        -48
+      ],
+      "id": "53a233cf-a795-40b0-a452-8a57724d96be",
+      "name": "Send a text message7",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "categories",
+          "mode": "list",
+          "cachedResultName": "categories"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1024,
+        -624
+      ],
+      "id": "937ac60e-82fc-4ec9-aca8-ae18e88b736f",
+      "name": "Get  Categories db1",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Masukkan Nama Kategori",
+              "placeholder": "nama kategiri",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "=",
+              "placeholder": "Deskripsi"
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "Category Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1024,
+        -432
+      ],
+      "id": "ad0dc856-47cd-4222-9fd5-cd0be13f233f",
+      "name": "Add Categori",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "placeholder": "id",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "nama",
+              "placeholder": "nama category",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "deskripsi",
+              "placeholder": "deskripsi"
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "User Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1024,
+        -240
+      ],
+      "id": "a8f9c504-f207-483a-96d7-a76ad972ea4a",
+      "name": "Edit Categori",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "categories",
+          "mode": "list",
+          "cachedResultName": "categories"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.data.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nama_kategori",
+              "value": "={{ $json.data.nama }}"
+            },
+            {
+              "column": "deskripsi",
+              "value": "={{ $json.data.deskripsi }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -800,
+        -240
+      ],
+      "id": "9d0ff8b5-4665-48d2-8467-034bbcf78fc1",
+      "name": "Edit  Categori db",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "categories",
+          "mode": "list",
+          "cachedResultName": "categories"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.data.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -800,
+        -48
+      ],
+      "id": "219c161f-b72d-4e39-bcde-ed0c22219236",
+      "name": "Delete Categori db1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menambahkan Product :\n\nNama: {{ $('Add Products').item.json.data[\"nama \"] }}\nDeskripsi: {{ $('Add Products').item.json.data.slug }}\nharga: {{ $('Add Products').item.json.data.harga }}\nketegoti id: {{ $('Add Products').item.json.data.kategori_id }}\nthumbnail url: {{ $('Add Products').item.json.data[\"thumbnail_url\t\"] }}\nstock: {{ $('Add Products').item.json.data.stock }}\nstatus: {{ $('Add Products').item.json.data.status }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        240
+      ],
+      "id": "ff77b2b0-6b03-4907-9d0b-43776c8e90ba",
+      "name": "Send a text message8",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "=[\n  {\n    \"id\": {{ $json.id }},\n    \"nama_kategori\":\"{{ $json.nama_produk }}\"\n  }\n]",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -928,
+        112
+      ],
+      "id": "0f1e9a8d-bf15-42d0-85db-a50252dc874e",
+      "name": "Send a text message9",
+      "webhookId": "6d1d7612-a380-4880-9c3b-25f1189ca910",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "6352808441",
+        "message": "Masukkan id data yang ingin di Hapus :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "placeholder": "number id",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This Button",
+          "responseFormCustomCss": ":root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1168,
+        624
+      ],
+      "id": "923d655b-3e80-4ba2-96bf-7293f507eae3",
+      "name": "Send message and wait for response2",
+      "webhookId": "9b64b561-70cb-42d3-b0ac-f488fca2a628",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Mengedit Product",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -768,
+        448
+      ],
+      "id": "725bef06-225f-4753-82bf-16276e344533",
+      "name": "Send a text message10",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "=Berhasil Menghapus Product :\n\nDengan ID: {{ $('Send message and wait for response2').item.json.data.id }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        624
+      ],
+      "id": "00f414c7-3793-4c53-a5b3-186aefcbd9e5",
+      "name": "Send a text message11",
+      "webhookId": "6221cfac-ca32-4b10-91ad-88a0f0286b87",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -1168,
+        48
+      ],
+      "id": "c9579c30-db4e-41e0-b74f-e94582c8e322",
+      "name": "Get  Products db",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "nama ",
+              "placeholder": "nama product",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "=slug",
+              "placeholder": "slug"
+            },
+            {
+              "fieldLabel": "deskripsi",
+              "placeholder": "deskripsi"
+            },
+            {
+              "fieldLabel": "harga",
+              "fieldType": "number",
+              "placeholder": "harga"
+            },
+            {
+              "fieldLabel": "kategori_id",
+              "fieldType": "number",
+              "placeholder": "kategori_id"
+            },
+            {
+              "fieldLabel": "thumbnail_url\t",
+              "fieldType": "textarea",
+              "placeholder": "thumbnail_url\t"
+            },
+            {
+              "fieldLabel": "stock",
+              "placeholder": "stock"
+            },
+            {
+              "fieldLabel": "status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "active"
+                  },
+                  {
+                    "option": "inactive"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "Product Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1168,
+        240
+      ],
+      "id": "cd8bfffc-9c98-428f-98bd-8a3581d24bcc",
+      "name": "Add Products",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nama_produk",
+              "value": "={{ $json.data[\"nama \"] }}"
+            },
+            {
+              "column": "slug",
+              "value": "={{ $json.data.slug }}"
+            },
+            {
+              "column": "deskripsi",
+              "value": "={{ $json.data.deskripsi }}"
+            },
+            {
+              "column": "harga",
+              "value": "={{ $json.data.harga }}"
+            },
+            {
+              "column": "kategori_id",
+              "value": "={{ $json.data.kategori_id }}"
+            },
+            {
+              "column": "thumbnail_url",
+              "value": "={{ $json.data[\"thumbnail_url\t\"] }}"
+            },
+            {
+              "column": "stock",
+              "value": "={{ $json.data.stock }}"
+            },
+            {
+              "column": "status",
+              "value": "={{ $json.data.status }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -944,
+        240
+      ],
+      "id": "0ca6ad5c-c146-4acb-a468-079927a328c9",
+      "name": "Add Categori db2",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d4cd4592-da76-404e-a328-b45804a6f4c0",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "/helps",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1472,
+        1120
+      ],
+      "id": "a5816e3e-b155-426c-aa33-d920b84e99db",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "6352808441",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "halo",
+                    "additionalFields": {
+                      "callback_data": "/getUsers",
+                      "switch_inline_query_current_chat": "/getUsers"
+                    }
+                  },
+                  {
+                    "text": "/getCategories",
+                    "additionalFields": {
+                      "callback_data": "/getCategories",
+                      "switch_inline_query_current_chat": "/getUsers"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1248,
+        1120
+      ],
+      "id": "301ad5cc-3867-4f4f-b81c-accf812e8bc2",
+      "name": "Send a text message12",
+      "webhookId": "bfe3677d-9c1e-417f-89b6-b576aa9b9a1a",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "Masukkan commant berikut :",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getUsers",
+                    "additionalFields": {
+                      "callback_data": "/getUsers"
+                    }
+                  },
+                  {
+                    "text": "/addUser",
+                    "additionalFields": {
+                      "callback_data": "/addUser"
+                    }
+                  },
+                  {
+                    "text": "/editUser",
+                    "additionalFields": {
+                      "callback_data": "/editUser"
+                    }
+                  },
+                  {
+                    "text": "/deleteUser",
+                    "additionalFields": {
+                      "callback_data": "/deleteUser"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getCategories",
+                    "additionalFields": {
+                      "callback_data": "/getCategories"
+                    }
+                  },
+                  {
+                    "text": "/addCategory",
+                    "additionalFields": {
+                      "callback_data": "/addCategory"
+                    }
+                  },
+                  {
+                    "text": "/editCategory",
+                    "additionalFields": {
+                      "callback_data": "/editCategory"
+                    }
+                  },
+                  {
+                    "text": "/deleteCategory",
+                    "additionalFields": {
+                      "callback_data": "/deleteCategory"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1472,
+        -1440
+      ],
+      "id": "c2cf9d22-b5fb-4758-a471-a013284a0de5",
+      "name": "Send a text message13",
+      "webhookId": "21d82d72-567d-4fd6-b3be-4029c7e5dcdc",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.callback_query.data }}{{ $json.message.text }}",
+                    "rightValue": "/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    },
+                    "id": "e4bd0aa9-3585-40bd-9954-7d3774b74299"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/aman"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -2176,
+        -144
+      ],
+      "id": "2d4c0564-bec4-485c-bc89-9b2e3071b7ed",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "Masukkan commant berikut :",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getUsers",
+                    "additionalFields": {
+                      "callback_data": "/getUsers"
+                    }
+                  },
+                  {
+                    "text": "/addUser",
+                    "additionalFields": {
+                      "callback_data": "/addUser"
+                    }
+                  },
+                  {
+                    "text": "/editUser",
+                    "additionalFields": {
+                      "callback_data": "/editUser"
+                    }
+                  },
+                  {
+                    "text": "/deleteUser",
+                    "additionalFields": {
+                      "callback_data": "/deleteUser"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getCategories",
+                    "additionalFields": {
+                      "callback_data": "/getCategories"
+                    }
+                  },
+                  {
+                    "text": "/addCategory",
+                    "additionalFields": {
+                      "callback_data": "/addCategory"
+                    }
+                  },
+                  {
+                    "text": "/editCategory",
+                    "additionalFields": {
+                      "callback_data": "/editCategory"
+                    }
+                  },
+                  {
+                    "text": "/deleteCategory",
+                    "additionalFields": {
+                      "callback_data": "/deleteCategory"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/getProducts",
+                    "additionalFields": {
+                      "callback_data": "/getProducts"
+                    }
+                  },
+                  {
+                    "text": "/addProduct",
+                    "additionalFields": {
+                      "callback_data": "/addProduct"
+                    }
+                  },
+                  {
+                    "text": "/editProduct",
+                    "additionalFields": {
+                      "callback_data": "/editProduct"
+                    }
+                  },
+                  {
+                    "text": "/deleteProduct",
+                    "additionalFields": {
+                      "callback_data": "/deleteProduct"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -2048,
+        224
+      ],
+      "id": "6607a98e-4538-4a32-ac1f-6b4208c9e487",
+      "name": "Send a text message14",
+      "webhookId": "21d82d72-567d-4fd6-b3be-4029c7e5dcdc",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "=6352808441",
+        "message": "Isi Data Data Berikut :",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "id",
+              "fieldType": "number",
+              "placeholder": "id",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "nama_produk",
+              "placeholder": "nama"
+            },
+            {
+              "fieldLabel": "slug",
+              "placeholder": "slug"
+            },
+            {
+              "fieldLabel": "deskripsi",
+              "fieldType": "textarea",
+              "placeholder": "deskripsi"
+            },
+            {
+              "fieldLabel": "harga",
+              "fieldType": "number",
+              "placeholder": "harga product"
+            },
+            {
+              "fieldLabel": "kategori_id",
+              "fieldType": "number",
+              "placeholder": "kategori_id"
+            },
+            {
+              "fieldLabel": "thumbnail_url",
+              "fieldType": "textarea",
+              "placeholder": "thumbnail_url"
+            },
+            {
+              "fieldLabel": "stock",
+              "fieldType": "number",
+              "placeholder": "stock"
+            },
+            {
+              "fieldLabel": "status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "active"
+                  },
+                  {
+                    "option": "inactive"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "messageButtonLabel": "Klik This button",
+          "responseFormTitle": "Product Controllers",
+          "responseFormButtonLabel": "Submit",
+          "responseFormCustomCss": "=:root {\n  --font-family: 'Open Sans', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-bold: 600;\n  --font-size-body: 12px;\n  --font-size-label: 14px;\n  --font-size-test-notice: 12px;\n  --font-size-input: 14px;\n  --font-size-header: 20px;\n  --font-size-paragraph: 14px;\n  --font-size-link: 12px;\n  --font-size-error: 12px;\n  --font-size-html-h1: 28px;\n  --font-size-html-h2: 20px;\n  --font-size-html-h3: 16px;\n  --font-size-html-h4: 14px;\n  --font-size-html-h5: 12px;\n  --font-size-html-h6: 10px;\n  --font-size-subheader: 14px;\n\n  /* Colors - Blue Theme */\n   --color-background: #f0fdf4;\n  --color-test-notice-text: #16a34a;\n  --color-test-notice-bg: #f7fee7;\n  --color-test-notice-border: #bbf7d0;\n  --color-card-bg: #ffffff;\n  --color-card-border: #e5e7eb;\n  --color-card-shadow: rgba(34, 197, 94, 0.08);\n  --color-link: #6b7280;\n  --color-header: #1f2937;\n  --color-label: #374151;\n  --color-input-border: #d1d5db;\n  --color-input-text: #6b7280;\n  --color-focus-border: #22c55e;\n  --color-submit-btn-bg: #16a34a;\n  --color-submit-btn-text: #ffffff;\n  --color-error: #dc2626;\n  --color-required: #16a34a;\n  --color-clear-button-bg: #6b7280;\n  --color-html-text: #374151;\n  --color-html-link: #16a34a;\n  --color-header-subtext: #6b7280;\n\n  /* Border Radii */\n  --border-radius-card: 10px;\n  --border-radius-input: 10px;\n  --border-radius-clear-btn: 50%;\n  --card-border-radius: 10px;\n\n  /* Spacing */\n  --padding-container-top: 24px;\n  --padding-card: 24px;\n  --padding-test-notice-vertical: 12px;\n  --padding-test-notice-horizontal: 24px;\n  --margin-bottom-card: 16px;\n  --padding-form-input: 12px;\n  --card-padding: 24px;\n  --card-margin-bottom: 16px;\n\n  /* Dimensions */\n  --container-width: 448px;\n  --submit-btn-height: 48px;\n  --checkbox-size: 18px;\n\n  /* Others - Shadow Tebal */\n  --box-shadow-card: 0px 12px 40px 0px var(--color-card-shadow), 0px 4px 12px 0px rgba(59, 130, 246, 0.2);\n  --text-shadow-header: 2px 4px 8px rgba(59, 130, 246, 0.3);\n  --text-shadow-label: 1px 2px 4px rgba(59, 130, 246, 0.2);\n  --box-shadow-input: 0px 4px 16px rgba(59, 130, 246, 0.15);\n  --box-shadow-button: 0px 8px 24px rgba(29, 78, 216, 0.4), 0px 4px 12px rgba(59, 130, 246, 0.3);\n  --opacity-placeholder: 0.5;\n}",
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1136,
+        464
+      ],
+      "id": "eefba133-8d4f-4f58-b9a8-3fda2a2d51e9",
+      "name": "Add Products1",
+      "webhookId": "3d790061-f6a3-4eb2-be19-15662c9124fb",
+      "credentials": {
+        "telegramApi": {
+          "id": "0C8bmvqNUa9mN37N",
+          "name": "geuqfu23r6_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.data.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nama_produk",
+              "value": "={{ $json.data.nama_produk }}"
+            },
+            {
+              "column": "slug",
+              "value": "={{ $json.data.slug }}"
+            },
+            {
+              "column": "deskripsi",
+              "value": "={{ $json.data.deskripsi }}"
+            },
+            {
+              "column": "harga",
+              "value": "={{ $json.data.harga }}"
+            },
+            {
+              "column": "kategori_id",
+              "value": "={{ $json.data.kategori_id }}"
+            },
+            {
+              "column": "thumbnail_url",
+              "value": "={{ $json.data.thumbnail_url }}"
+            },
+            {
+              "column": "stock",
+              "value": "={{ $json.data.stock }}"
+            },
+            {
+              "column": "status",
+              "value": "={{ $json.data.status }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -960,
+        448
+      ],
+      "id": "60262694-c5f9-4232-8214-f1c5a9a7fb43",
+      "name": "Edit  Product db1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.data.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        -944,
+        624
+      ],
+      "id": "0e0e047c-32f7-45cf-b245-5c2caea72e64",
+      "name": "Delete product db",
+      "alwaysOutputData": false,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-11T13:11:56.042Z",
+      "updatedAt": "2025-09-11T13:11:56.042Z",
+      "role": "workflow:owner",
+      "workflowId": "Aw72mAhYLrB3MYvD",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-14T03:47:07.000Z",
+  "versionId": "3d21bda0-8e46-41ca-8cf3-75e94a61921d"
+}
