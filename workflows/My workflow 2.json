@@ -1,0 +1,181 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-09T00:45:28.094Z",
+  "id": "cAozD9QW2avfXEla",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7b5e1c29-005d-401f-9231-7f3e1dd65f31",
+      "name": "Telegram Trigger",
+      "webhookId": "eef8f37e-bcbe-401f-b9e7-96155c15cc20",
+      "credentials": {
+        "telegramApi": {
+          "id": "3dALCDWrAQEHb48F",
+          "name": "TelegramBot3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "09ee3f93-af07-4f5c-b865-8ddecfdcc973",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        160,
+        240
+      ],
+      "id": "c1f34b08-58e6-4772-adb4-812447f85c06",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aBHjrzSTvf9MbwMC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        560,
+        0
+      ],
+      "id": "d77c5720-e228-4474-a2b2-d004cd8d8a97",
+      "name": "Send a text message",
+      "webhookId": "0d1cf5d5-1c94-412f-9c2d-9946b5bf6371",
+      "credentials": {
+        "telegramApi": {
+          "id": "3dALCDWrAQEHb48F",
+          "name": "TelegramBot3"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Telegram Trigger": [
+      {
+        "json": {
+          "update_id": 433528634,
+          "message": {
+            "message_id": 100,
+            "from": {
+              "id": 6352808441,
+              "is_bot": false,
+              "first_name": "Mamam",
+              "last_name": "Mewing",
+              "username": "MamamMewing",
+              "language_code": "en"
+            },
+            "chat": {
+              "id": 6352808441,
+              "first_name": "Mamam",
+              "last_name": "Mewing",
+              "username": "MamamMewing",
+              "type": "private"
+            },
+            "date": 1757378932,
+            "text": "/command1",
+            "entities": [
+              {
+                "offset": 0,
+                "length": 9,
+                "type": "bot_command"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-09T00:45:28.105Z",
+      "updatedAt": "2025-09-09T00:45:28.105Z",
+      "role": "workflow:owner",
+      "workflowId": "cAozD9QW2avfXEla",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-10T13:33:19.000Z",
+  "versionId": "1adfffe2-4d31-41a6-8f6c-6caa87e1cfdc"
+}
