@@ -1,0 +1,84 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-09-09T12:47:48.315Z",
+  "id": "sPfrcpk9dkxbOqgp",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "426beda0-fa60-4819-9c15-d307d054e4e7",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f15ba437-c374-4a63-a06a-6571223bddf5",
+      "name": "Webhook",
+      "webhookId": "426beda0-fa60-4819-9c15-d307d054e4e7"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.personal.vaultsy.online",
+            "x-real-ip": "95.111.200.230",
+            "x-forwarded-for": "95.111.200.230",
+            "x-forwarded-proto": "https",
+            "connection": "upgrade",
+            "content-length": "288",
+            "accept": "*/*",
+            "x-callback-event": "payment_status",
+            "x-callback-signature": "65aa8cd119e286134a96b0de89a4ae63a014b92f773a18b3e3ca4cbbc8c7e8e8",
+            "content-type": "application/json",
+            "user-agent": "TriPay Payment/1.0 (+https://tripay.co.id/developer?tab=callback)"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "reference": "DEV-T38800285857OSJWK",
+            "merchant_ref": "T38800",
+            "payment_method": "qris",
+            "payment_method_code": "qris",
+            "amount_received": 60000,
+            "fee_merchant": 0,
+            "fee_customer": 60000,
+            "total_amount": 60000,
+            "is_closed_payment": 1,
+            "status": "PAID",
+            "paid_at": "1736467202",
+            "note": null,
+            "total_fee": 60000
+          },
+          "webhookUrl": "https://n8n.personal.vaultsy.online/webhook-test/426beda0-fa60-4819-9c15-d307d054e4e7",
+          "executionMode": "test"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-09T12:47:48.320Z",
+      "updatedAt": "2025-09-09T12:47:48.320Z",
+      "role": "workflow:owner",
+      "workflowId": "sPfrcpk9dkxbOqgp",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-10T13:33:28.000Z",
+  "versionId": "20b1d07f-f04c-43c2-b147-05f50ef7c9e7"
+}
