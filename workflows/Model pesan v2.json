@@ -1,0 +1,1494 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Select rows from a table in MySQL": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table in MySQL": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update rows in a table in MySQL": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Delete table or rows",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Chat": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete table or rows": {
+      "main": [
+        [
+          {
+            "node": "Respond to Chat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Chat1": {
+      "main": [
+        []
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Select rows from a table2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update rows in a table1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update rows in a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table2": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update rows in a table": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table": {
+      "main": [
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table1": {
+      "main": [
+        [
+          {
+            "node": "Update rows in a table3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update rows in a table3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update rows in a table1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-18T08:49:47.914Z",
+  "id": "FpFA9qmMq0TIf52K",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Model pesan v2",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "responseNodes"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        1768
+      ],
+      "id": "fc246f98-a160-40e2-b2c7-095269832666",
+      "name": "When chat message received",
+      "webhookId": "d4664f00-1666-4512-8bc9-7917197e7e6e"
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "=Kamu adalah asistent db\n1. gunakan semua tools untuk method \"CRUD\"\n2. jika saya menuliskan hanya menuliskan angka maka return angka tersebut"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        848,
+        1768
+      ],
+      "id": "00081b61-4069-4152-ac29-9606eb3ffc07",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        624,
+        1992
+      ],
+      "id": "94613548-4162-43ca-a49a-0ca1c455f8c1",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aBHjrzSTvf9MbwMC",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        1992
+      ],
+      "id": "ab52a82b-5589-4216-8397-6e0e64371131",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        752,
+        1992
+      ],
+      "id": "d591b8f5-1ce3-4685-99c6-eb88bc91b3e6",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aBHjrzSTvf9MbwMC",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySqlTool",
+      "typeVersion": 2.5,
+      "position": [
+        1008,
+        1992
+      ],
+      "id": "58e6c3f4-19ce-455d-920c-22a2e49f090a",
+      "name": "Select rows from a table in MySQL",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values1_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySqlTool",
+      "typeVersion": 2.5,
+      "position": [
+        1136,
+        1992
+      ],
+      "id": "11296a42-1224-4579-83c1-c714f2f1ef0a",
+      "name": "Insert rows in a table in MySQL",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Value_of_Column_to_Match_On', ``, 'string') }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values1_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySqlTool",
+      "typeVersion": 2.5,
+      "position": [
+        1264,
+        1992
+      ],
+      "id": "55433b26-ccf4-4c7a-9004-dad834f8e36d",
+      "name": "Update rows in a table in MySQL",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.value }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        848,
+        -160
+      ],
+      "id": "6693eb94-4f05-471d-a1e9-a39db87e94fa",
+      "name": "Delete table or rows",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "let output = $input.first().json.output;\n\n// paksa jadi number\nlet num = Number(output);\n\n// kalau bukan angka, Number() kasih NaN\nif (isNaN(num)) {\n    return { json: { status: false, value: null } };\n} else {\n    return { json: { status: true, value: num } };\n}\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        -64
+      ],
+      "id": "d4949fe5-f63f-45bd-a522-d8b9722204c2",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b739c723-0c31-43d8-a5f2-62b3d3169072",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "=true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        -64
+      ],
+      "id": "05f3b6c6-0ffb-4d82-90e3-8360061685e2",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "message": "={{ $('AI Agent').item.json.output }}",
+        "waitUserReply": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chat",
+      "typeVersion": 1,
+      "position": [
+        848,
+        32
+      ],
+      "id": "35239948-0085-4534-bdbd-3fe5032d0fb7",
+      "name": "Respond to Chat"
+    },
+    {
+      "parameters": {
+        "message": "=Berhasil menghapus data dengan id : {{ $('If').item.json.value }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chat",
+      "typeVersion": 1,
+      "position": [
+        1072,
+        -160
+      ],
+      "id": "fc009aca-a028-4d28-94cc-c78e8a8a4907",
+      "name": "Respond to Chat1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1072,
+        32
+      ],
+      "id": "246eb93a-b465-43d6-920e-0b2406c1600c",
+      "name": "Select rows from a table",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+          "mode": "list",
+          "cachedResultName": "Mysql Model pesan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1679831688,
+          "mode": "list",
+          "cachedResultName": "pesan blue print",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po/edit#gid=1679831688"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "pesan": "={{ $json.pesan }}",
+            "balasan": "={{ $json.balasan }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pesan",
+              "displayName": "pesan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "balasan",
+              "displayName": "balasan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1296,
+        32
+      ],
+      "id": "54c9688d-d3a5-4428-8d19-6a6c75ebcf06",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Fh4yfkJ9NyUgrun0",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        400,
+        928
+      ],
+      "id": "129565f9-a07c-4e96-af8f-3fb574bff11a",
+      "name": "Telegram Trigger",
+      "webhookId": "a73951de-2614-4fb9-af93-1a5af2909863",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "user",
+          "mode": "list",
+          "cachedResultName": "user"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        624,
+        928
+      ],
+      "id": "f5514dae-c15e-47d7-82fd-c82daeaf4e7a",
+      "name": "Select rows from a table1",
+      "credentials": {
+        "mySql": {
+          "id": "QT6iVjj2ozQ3sUUE",
+          "name": "status_admindhg2qi3yt_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "idle",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ddca0cfb-d4de-419b-84b3-528e7a00849a"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "idle"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6e576bfd-25b3-484b-af4e-5ce6ab2b43c3",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "waiting_data",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "waiting_data"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f9f89d8d-dac4-492b-a6b7-171f47e7fafa",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "waiting_id_data_edit",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "waiting_id_data_edit"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6e437f78-60fc-4b19-ba0a-bdd728ddec26",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "waiting_id_data_delete",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "waiting_id_data_delete"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        848,
+        896
+      ],
+      "id": "cf934f86-18f9-44e3-a85e-c60bf39266b0",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "👑👑 Selamat datang king alwan 👑👑\n\n- /getData\n- /addData\n- /editData\n- /deleteData",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1296,
+        256
+      ],
+      "id": "6cdcc5ce-0a07-4617-9ede-cb1eb69109c0",
+      "name": "Send a text message",
+      "webhookId": "05b45b23-d1ae-431a-8486-d0c82d34d9e6",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "/start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "183833a5-9075-4bc7-98b1-c9e10bd7d30c"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/start"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ab7140a3-a013-42c5-b624-235562112a3f",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "/getData",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/getData"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "63471a4c-cede-4142-bab8-dc355ac1e459",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "/addData",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "=/addData"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "eba93ed6-8102-4594-ad16-0efb1cb33782",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "/editData",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/editData"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ba38017d-25f3-436c-b791-6321c96ffa20",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "/deleteData",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/deleteData"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1072,
+        592
+      ],
+      "id": "8e7e3b4d-f55f-4fed-af36-9ebf4f151a4a",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1296,
+        448
+      ],
+      "id": "8af2f31d-5bc1-40af-a595-35d222035a48",
+      "name": "Select rows from a table2",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\n\n// Ambil hasil MySQL (semua row)\nconst rows = $input.all().map(item => item.json);\n\nlet message = \"\";\n\n\n// Loop hasil query\nrows.forEach((row) => {\n  message += `┊[${row.id}. ${row.pesan} : ${row.balasan}\\n \\n]`;\n});\n\n\n// Return ke node berikutnya\nreturn [{\n  json: { message }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1520,
+        448
+      ],
+      "id": "775b12ae-4321-4bc9-be40-2040df141cc8",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1744,
+        448
+      ],
+      "id": "0d9ece4c-4c7b-44b2-b67c-5cc1a5df5815",
+      "name": "Send a text message1",
+      "webhookId": "05b45b23-d1ae-431a-8486-d0c82d34d9e6",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "user",
+          "mode": "list",
+          "cachedResultName": "user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $('Select rows from a table1').item.json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "status",
+              "value": "waiting_data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1296,
+        640
+      ],
+      "id": "13cee39c-256f-4213-ba29-ebcbac1f9691",
+      "name": "Update rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "QT6iVjj2ozQ3sUUE",
+          "name": "status_admindhg2qi3yt_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "user",
+          "mode": "list",
+          "cachedResultName": "user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "status",
+              "value": "waiting_id_data_edit"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1296,
+        832
+      ],
+      "id": "f4957f9f-cde6-47f1-a01d-0dcec3086652",
+      "name": "Update rows in a table1",
+      "credentials": {
+        "mySql": {
+          "id": "QT6iVjj2ozQ3sUUE",
+          "name": "status_admindhg2qi3yt_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "user",
+          "mode": "list",
+          "cachedResultName": "user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "status",
+        "valueToMatchOn": "waiting_id_data_delete",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1296,
+        1024
+      ],
+      "id": "bc9d031e-049b-4155-b1f5-7c36b5f1d2ab",
+      "name": "Update rows in a table2",
+      "credentials": {
+        "mySql": {
+          "id": "QT6iVjj2ozQ3sUUE",
+          "name": "status_admindhg2qi3yt_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Masukkan data pesan :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1520,
+        640
+      ],
+      "id": "5b47c11e-9bdc-4aaf-8f08-5f8e464ad43e",
+      "name": "Send a text message2",
+      "webhookId": "fc46a4ba-7c62-43a1-9d1f-e0a86a2c8cd0",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        400,
+        1440
+      ],
+      "id": "506f84f7-d0ad-4106-a9e3-ef39f43bc61a",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Masukkan data balasan pesan :",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        1440
+      ],
+      "id": "fb955f36-956d-4ce9-87f1-d9f7b3fbddd1",
+      "name": "Send a text message3",
+      "webhookId": "fc46a4ba-7c62-43a1-9d1f-e0a86a2c8cd0",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "72805670-9ca0-4fb6-8504-bc3c05183849",
+              "name": "pesan",
+              "value": "={{ $('Telegram Trigger').item.json.message.text.split(' ')[2].split('\\n').first() }}",
+              "type": "string"
+            },
+            {
+              "id": "22f3a68f-287b-4d6a-abb4-eadac9cc02df",
+              "name": "balasan",
+              "value": "={{ $('Telegram Trigger').item.json.message.text.split(' ')[2].split('\\n').last() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        1216
+      ],
+      "id": "e45ede52-dfd2-46fb-9602-a9bf4092e591",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $json.pesan }}"
+            },
+            {
+              "column": "balasan",
+              "value": "={{ $json.balasan }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1392,
+        1216
+      ],
+      "id": "f429e238-f255-455e-b149-a57d178af697",
+      "name": "Insert rows in a table1",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "=Berhasil add pesan",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1856,
+        1216
+      ],
+      "id": "13f3b286-e1e7-48e7-9e6b-5bd9e1a71aa2",
+      "name": "Send a text message4",
+      "webhookId": "05b45b23-d1ae-431a-8486-d0c82d34d9e6",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "user",
+          "mode": "list",
+          "cachedResultName": "user"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "status",
+              "value": "idle"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1600,
+        1216
+      ],
+      "id": "2c8de01b-2c60-4521-8e69-edb2c65c1a5a",
+      "name": "Update rows in a table3",
+      "credentials": {
+        "mySql": {
+          "id": "QT6iVjj2ozQ3sUUE",
+          "name": "status_admindhg2qi3yt_db"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Masukkan data pesan beserta id nya dengan format seperti ini :\n\nid - 1(1-10)\npesan - nama_pesan\nbalasan - belasan_pesan",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1520,
+        832
+      ],
+      "id": "83ce1ed9-b8f1-4128-ad43-15967889a8b9",
+      "name": "Send a text message5",
+      "webhookId": "fc46a4ba-7c62-43a1-9d1f-e0a86a2c8cd0",
+      "credentials": {
+        "telegramApi": {
+          "id": "VkBzu7K9dpswylSJ",
+          "name": "Pesan.digital.mamam"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-18T08:49:47.923Z",
+      "updatedAt": "2025-09-18T08:49:47.923Z",
+      "role": "workflow:owner",
+      "workflowId": "FpFA9qmMq0TIf52K",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    },
+    "node:Google Sheets Trigger": {
+      "documentId": "1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po",
+      "sheetId": 0,
+      "lastRevision": 139,
+      "lastRevisionLink": "https://docs.google.com/spreadsheets/export?id=1mHPhNQLKqpTUdrgciKRswLMiYbUUSpQNd8i82ceU8Po&revision=139&exportFormat=xlsx"
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-18T13:31:05.000Z",
+  "versionId": "ccd90773-f381-4e8d-ba57-98333cf2489c"
+}
