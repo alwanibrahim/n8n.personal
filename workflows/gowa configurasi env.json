@@ -1,0 +1,439 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [
+          {
+            "node": "Execute a command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a command": {
+      "main": [
+        [
+          {
+            "node": "Execute a command1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a command1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-11T14:39:29.568Z",
+  "id": "pyzVCY54f0QkTe4b",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "gowa configurasi .env",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -224,
+        -144
+      ],
+      "id": "ea76cc6f-937c-4bca-a70e-c3d43a142719",
+      "name": "Telegram Trigger",
+      "webhookId": "7463ca4a-7559-45ed-8955-2a872470f3ed",
+      "credentials": {
+        "telegramApi": {
+          "id": "1M53hOTSepITlLBk",
+          "name": "naheryhuo3_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    },
+                    "id": "ef69c3ca-1ded-4536-aa23-f85da1505be0"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        224,
+        -144
+      ],
+      "id": "a5c28435-3807-49be-9d02-509cb2ed20d9",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/helps",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "845add55-dc0b-4afe-a2f5-5018e36421da"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/helps"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e32d2a3c-5fb5-45ab-aeca-82f6c48be86a",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/start"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "59a0ae62-90c3-46ed-bf46-a99d267bd150",
+                    "leftValue": "/env_gowa_switch",
+                    "rightValue": "/env_gowa_switch",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "/env_gowa_switch"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        448,
+        -192
+      ],
+      "id": "8eb3466f-966b-43b4-a04c-25cb1d6fc44d",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "chatId": "=6352808441",
+        "text": "/helps untuk melihat daftar coommants\n/.envGowaSwitch untuk switch test ke production",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        672,
+        -240
+      ],
+      "id": "3bf35e53-bc93-417a-944b-a602b1fc6a25",
+      "name": "Send a text message",
+      "webhookId": "98f230aa-c3a0-4b50-9da3-c2cdd41eaf52",
+      "credentials": {
+        "telegramApi": {
+          "id": "1M53hOTSepITlLBk",
+          "name": "naheryhuo3_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "bash cache.sh",
+        "cwd": "/root/docker/gowa"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        672,
+        -48
+      ],
+      "id": "d06c049e-b496-4385-9b09-0dafbe15dfa2",
+      "name": "Execute a command",
+      "credentials": {
+        "sshPassword": {
+          "id": "NByyrIV5ssaq2TNn",
+          "name": "173.249.42.122"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "={{ $('Execute a command').item.json.stdout }}\n{{ $json.stderr }}",
+        "additionalFields": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        -48
+      ],
+      "id": "342403d1-2d5a-4e14-8a97-b60458e9c00c",
+      "name": "Send a text message1",
+      "webhookId": "ff64ccd8-6099-4195-bee8-9bb0427afcf8",
+      "credentials": {
+        "telegramApi": {
+          "id": "1M53hOTSepITlLBk",
+          "name": "naheryhuo3_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "docker compose down && docker compose up -d",
+        "cwd": "/root/docker/gowa"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        896,
+        -48
+      ],
+      "id": "75d624d8-2e92-4350-bca2-5681e07426e6",
+      "name": "Execute a command1",
+      "credentials": {
+        "sshPassword": {
+          "id": "NByyrIV5ssaq2TNn",
+          "name": "173.249.42.122"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "df3eeb95-88b5-4ba4-88b0-66c7a60275aa",
+              "leftValue": "={{ $json.message.from.id }}",
+              "rightValue": 6352808441,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        -144
+      ],
+      "id": "df89453a-dd29-451b-b79f-a4f184f5689c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "chatId": "6352808441",
+        "text": "=.",
+        "replyMarkup": "replyKeyboard",
+        "replyKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/helps",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/env_gowa_switch",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {},
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        880,
+        -240
+      ],
+      "id": "06ff3c9c-ad2e-49ea-b2c3-e085a7e29968",
+      "name": "Send a text message2",
+      "webhookId": "a71b62f4-4810-49ef-bec9-d58942c2968a",
+      "credentials": {
+        "telegramApi": {
+          "id": "1M53hOTSepITlLBk",
+          "name": "naheryhuo3_bot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-11T14:39:29.582Z",
+      "updatedAt": "2025-09-11T14:39:29.582Z",
+      "role": "workflow:owner",
+      "workflowId": "pyzVCY54f0QkTe4b",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-15T09:09:11.000Z",
+  "versionId": "fc99c117-5c97-43cc-a0d1-a57ff17951a2"
+}
