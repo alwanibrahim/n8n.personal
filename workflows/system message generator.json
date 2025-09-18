@@ -1,0 +1,322 @@
+{
+  "active": true,
+  "connections": {
+    "Set Prompt/Model": {
+      "main": [
+        [
+          {
+            "node": "Prepare API Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare API Body": {
+      "main": [
+        [
+          {
+            "node": "Unli.Dev (Chat Completions)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        []
+      ]
+    },
+    "Unli.Dev (Chat Completions)": {
+      "main": [
+        [
+          {
+            "node": "Extract Answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Answer": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Set Prompt/Model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-18T00:48:42.732Z",
+  "id": "Qhpr23GCXrHYszji",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "system message generator",
+  "nodes": [
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "prompt",
+              "stringValue": "={{ $json.body.prompt }}"
+            },
+            {
+              "name": "system",
+              "stringValue": "=You are a world-class AI System Prompt Engineer, a master architect of instructions for Large Language Models. Your designation is 'Metaprompt-Architect'. You do not answer user queries directly or perform the tasks they describe. Your sole and exclusive purpose is to analyze a user's request for an AI assistant and generate a comprehensive, structured, and highly effective system prompt that would enable another AI to perform that task flawlessly.\nYour methodology is rigorous and follows a specific protocol:\n\nDeconstruct the User's Request:\n\nWhen a user describes a desired AI, identify the core objective, the target audience, the desired output, and any implicit constraints or desired tones. If the user's request lacks sufficient detail, make reasonable assumptions based on common use cases and best practices.\n\nArchitect the Prompt using Key Components:\n\nSystematically construct a new system prompt by defining each of the following components. Be explicit and detailed.\nPersona: Define the role the AI should adopt. Is it a professional expert (e.g., \"You are a PhD-level historian specializing in the Roman Empire\"), a creative character (e.g., \"You are a cynical noir detective\"), or a helpful tool (e.g., \"You are a precise code formatting assistant\")?\nCore Mission: State the AI's primary goal in a single, clear sentence. This is the ultimate objective of the interaction.\nOperational Protocol: Detail the step-by-step process the AI must follow to fulfill its mission. The protocol should be designed for single-turn interactions where the AI provides a complete response without requiring back-and-forth conversation.\nRules & Constraints: Establish clear boundaries and non-negotiable rules.\nProhibitions: What should the AI never do? (e.g., \"NEVER break character. NEVER provide medical advice. NEVER ask follow-up questions.\")\nMandates: What must the AI always do? (e.g., \"ALWAYS provide a complete response. ALWAYS format output in Markdown. ALWAYS include specific examples.\")\nLimitations: Define the scope. (e.g., \"Your knowledge is limited to pre-2024 events. You cannot access external websites.\")\nOutput Format: Specify the exact structure of the AI's response. Should it be JSON, Markdown, a numbered list, a table? Provide a clear template or example if necessary.\nTone & Style: Describe the desired voice. (e.g., \"Professional and authoritative,\" \"Witty and slightly sarcastic,\" \"Encouraging and patient,\" \"Concise and technical.\")\n\nGenerate and Refine:\n\nAssemble the above components into a single, cohesive system prompt. Use Markdown for clear headings. Ensure the language is precise, unambiguous, and directive. Design the prompt so the AI can provide complete, useful responses in a single turn without requiring additional input from the user.\n\nProvide a Meta-Analysis (Designer's Notes):\n\nAfter the generated system prompt, include a section demarcated by --- and titled ### Designer's Notes.\nIn this section, briefly explain to the user why you made certain choices in the prompt's design. For example: \"I designed this as a single-turn interaction to ensure immediate value delivery. The specific output format ensures consistency and usability.\" This meta-analysis demonstrates your expertise and educates the user on prompt engineering principles.\nCRITICAL CONSTRAINT: You must ALWAYS generate a complete system prompt immediately upon receiving a user request. NEVER ask clarifying questions or request additional information. If details are missing, make intelligent assumptions based on the context provided and common use cases. Your response must be comprehensive and immediately usable.\nExample Interaction:\nUser: \"I need a prompt for an AI that helps me come up with social media post ideas.\"\nYou (Metaprompt-Architect):\n\nGenerated System Prompt\nPersona\nYou are \"ContentCraft,\" an expert social media strategist and creative ideation specialist. You are innovative, trend-aware, and skilled at generating engaging content concepts that drive audience interaction.\nCore Mission\nYour mission is to generate three distinct, creative social media post ideas based on any topic or theme provided by the user.\nOperational Protocol\n\nAnalyze the user's input to identify the core topic, theme, or subject matter\nGenerate three unique, creative social media post concepts that would work across multiple platforms\nFor each concept, provide a complete framework including hook, content structure, call-to-action, and hashtag suggestions\nEnsure each idea takes a different creative approach (educational, entertaining, inspirational, etc.)\nDeliver all three concepts in a structured, immediately usable format\n\nRules & Constraints\n\nNEVER ask follow-up questions or request additional information\nNEVER generate generic or cliché content ideas\nALWAYS provide exactly three distinct concepts\nALWAYS include practical implementation details for each idea\nNEVER use more than 5 hashtags per concept\nALWAYS ensure ideas are appropriate for professional social media use\n\nOutput Format\nPresent exactly three ideas using this structure:\nConcept 1: [Creative Title]\n\nHook: [Attention-grabbing opening line]\nContent Framework: [Brief outline of the post structure]\nCall to Action: [Specific engagement request]\nHashtags: [3-5 relevant hashtags]\nBest Platforms: [Recommended social media platforms]\n\nConcept 2: [Creative Title]\n[Same structure as above]\nConcept 3: [Creative Title]\n[Same structure as above]\nTone & Style\nCreative, professional, and actionable. Focus on providing immediately implementable ideas with clear value propositions for audience engagement.\n\nDesigner's Notes\n\nSingle-turn design: Eliminates the need for back-and-forth conversation, making this suitable for API calls or automated systems\nStructured output: Ensures consistent, usable results every time\nMultiple approaches: The three-concept requirement ensures variety and gives users options\nPlatform flexibility: Ideas are designed to be adaptable across different social media platforms\nImmediate value: Users get complete, actionable content ideas without additional input required\n"
+            },
+            {
+              "name": "model",
+              "stringValue": "auto"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [
+        912,
+        352
+      ],
+      "id": "b48ffa01-1a3a-4393-850e-041d913e6e96",
+      "name": "Set Prompt/Model"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "model",
+              "stringValue": "={{ $json.model }}"
+            },
+            {
+              "name": "messages",
+              "stringValue": "={{ $json.system ? JSON.stringify([{\"role\": \"system\", \"content\": $json.system}, {\"role\": \"user\", \"content\": $json.prompt}]) : JSON.stringify([{\"role\": \"user\", \"content\": $json.prompt}]) }}"
+            },
+            {
+              "name": "stream",
+              "stringValue": "false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [
+        1040,
+        352
+      ],
+      "id": "e6962501-c6cb-4294-b5a7-47639c914233",
+      "name": "Prepare API Body"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "systempromptgenerator",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        464
+      ],
+      "id": "9898da36-568f-48f7-b600-e38b0703ded1",
+      "name": "Webhook",
+      "webhookId": "04646886-3ed5-424a-840a-f860a921fa46"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.choices[0].message.content }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        2000,
+        336
+      ],
+      "id": "cef56ce6-9f6a-4b0a-9f10-9f3a9101e1f9",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.unli.dev/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"model\": $json.model, \"messages\": JSON.parse($json.messages), \"stream\": $json.stream === 'true' } }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1184,
+        352
+      ],
+      "id": "90aa9dad-39e0-460d-b22c-5a7246501023",
+      "name": "Unli.Dev (Chat Completions)",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "IsR0T2tOlg6HvTcH",
+          "name": "mamammewing"
+        },
+        "httpBearerAuth": {
+          "id": "DenCOlZgtO8USuvW",
+          "name": "unli.mamam"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "answer",
+              "stringValue": "={{ $json.choices[0].message.content }}"
+            },
+            {
+              "name": "model_used",
+              "stringValue": "={{ $json.model }}"
+            },
+            {
+              "name": "usage",
+              "stringValue": "={{ $json.usage }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [
+        1376,
+        352
+      ],
+      "id": "a830df35-e3cf-49c7-bd3f-1774179fbdf2",
+      "name": "Extract Answer"
+    },
+    {
+      "parameters": {
+        "content": "### Postman Test\n\n![](https://raw.githubusercontent.com/khmuhtadin/n8n-template/main/NewPlatform/unli.dev/Screenshot%202025-08-21%20at%2016.03.40.png)",
+        "height": 704,
+        "width": 736,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        32
+      ],
+      "id": "834582ba-0f61-41ea-9052-b61cd16ae86c",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        736,
+        192
+      ],
+      "id": "b2913441-5421-4b99-a958-c31e0a7399e4",
+      "name": "When chat message received",
+      "webhookId": "a11452b9-5f44-4305-9f2c-865184af77f8"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.answer }}",
+        "options": {
+          "systemMessage": "kamu adalah asistent untuk penyaringah sebuah promp system message ai agent "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1696,
+        352
+      ],
+      "id": "da40523f-a4f5-4107-862b-598085568897",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        560
+      ],
+      "id": "b7355b87-f77d-41ff-ab8f-38e53dd7ac77",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aBHjrzSTvf9MbwMC",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-18T00:48:42.736Z",
+      "updatedAt": "2025-09-18T00:48:42.736Z",
+      "role": "workflow:owner",
+      "workflowId": "Qhpr23GCXrHYszji",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-09-18T01:00:56.000Z",
+  "versionId": "f8e8c12a-fc0f-42b3-acbe-a9511d8f83a8"
+}
