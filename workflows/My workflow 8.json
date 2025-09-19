@@ -1,0 +1,68 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-19T12:58:13.345Z",
+  "id": "PAfkbPFKWpAaqXMF",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 8",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7d9acaac-f292-46c9-9ffe-04a7499f250c",
+      "name": "When chat message received",
+      "webhookId": "7f854047-28e2-4096-832a-a80a523ff168"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        176,
+        0
+      ],
+      "id": "4233ea8b-551e-4581-99d9-ef51962798b2",
+      "name": "AI Agent"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-19T12:58:13.349Z",
+      "updatedAt": "2025-09-19T12:58:13.349Z",
+      "role": "workflow:owner",
+      "workflowId": "PAfkbPFKWpAaqXMF",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-19T13:09:32.000Z",
+  "versionId": "ef7f485c-fecc-4b2f-ac71-70f3f3401e30"
+}
