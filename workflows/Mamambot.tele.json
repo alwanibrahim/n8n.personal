@@ -8,13 +8,29 @@
             "node": "Get data from db",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "db pesan_user",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "db product",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
     "Switch status user": {
       "main": [
-        [],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [],
         [],
         [],
@@ -35,7 +51,7 @@
       "main": [
         [
           {
-            "node": "Switch status user",
+            "node": "Edit Fields2",
             "type": "main",
             "index": 0
           }
@@ -74,6 +90,60 @@
           }
         ]
       ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "db product": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "db pesan_user": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-09-18T02:05:30.784Z",
@@ -95,7 +165,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        0
+        -288
       ],
       "id": "18ff6434-60f9-4983-af4f-23877402c536",
       "name": "Telegram",
@@ -141,8 +211,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.5,
       "position": [
-        816,
-        128
+        672,
+        256
       ],
       "id": "dc5e231d-d838-4a05-a530-db426efaabfd",
       "name": "Basic Register",
@@ -152,7 +222,8 @@
           "id": "Y7CTksADXGxvRDva",
           "name": "anduqieq32j_bot"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -168,7 +239,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "IDLE",
                     "operator": {
                       "type": "string",
@@ -193,7 +264,7 @@
                 "conditions": [
                   {
                     "id": "0c77a72b-f324-45de-9f59-8cc7ff00ed74",
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "WAITING_EMAIL",
                     "operator": {
                       "type": "string",
@@ -218,7 +289,7 @@
                 "conditions": [
                   {
                     "id": "e9d7626e-3696-400b-ba3d-1e80694a8f59",
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "WAITING_OTP",
                     "operator": {
                       "type": "string",
@@ -243,7 +314,7 @@
                 "conditions": [
                   {
                     "id": "7daff115-6f65-4a38-b4c7-fae51a827fb7",
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "WAITING_PHONE",
                     "operator": {
                       "type": "string",
@@ -293,7 +364,7 @@
                 "conditions": [
                   {
                     "id": "3a77b550-68de-456f-8ac1-a2374b4a7337",
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "WAITING_APPROVAL",
                     "operator": {
                       "type": "string",
@@ -318,7 +389,7 @@
                 "conditions": [
                   {
                     "id": "91338592-c06c-430f-8ad9-07c5fa765b82",
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "VERIFIED",
                     "operator": {
                       "type": "string",
@@ -343,7 +414,7 @@
                 "conditions": [
                   {
                     "id": "66f16421-9c7f-4f10-b263-0417b17b8f00",
-                    "leftValue": "={{ $json.data[0].status }}",
+                    "leftValue": "={{ $('Get data from db').item.json.data[0].status }}",
                     "rightValue": "BLOCKED",
                     "operator": {
                       "type": "string",
@@ -367,7 +438,7 @@
       "typeVersion": 3.2,
       "position": [
         448,
-        -112
+        96
       ],
       "id": "deef2175-30c8-47d0-8444-e2610d10df59",
       "name": "Switch status user"
@@ -385,7 +456,7 @@
         "where": {
           "values": [
             {
-              "column": "=id",
+              "column": "chat_id",
               "value": "={{ $json.message.chat.id }}{{ $json.callback_query.message.chat.id }}"
             }
           ]
@@ -398,7 +469,7 @@
       "typeVersion": 2.5,
       "position": [
         224,
-        0
+        -288
       ],
       "id": "aeba7d63-2109-4c6d-ada5-be0ece38136c",
       "name": "Get data from db",
@@ -513,8 +584,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1248,
-        128
+        1344,
+        256
       ],
       "id": "fd2ce056-4fd7-42c2-a0af-8213cc807e8d",
       "name": "Opening",
@@ -543,8 +614,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        960,
-        128
+        896,
+        256
       ],
       "id": "908558c1-71e9-410f-9e20-b424b6953c5d",
       "name": "Edit Fields"
@@ -653,7 +724,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        336
+        544
       ],
       "id": "f1a1076d-fa64-4d1b-9899-81f9e05dd0f5",
       "name": "Opening1",
@@ -680,8 +751,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1104,
-        128
+        1120,
+        256
       ],
       "id": "187e9afd-08e4-4e12-970f-c133ed46babd",
       "name": "Download file",
@@ -691,6 +762,247 @@
           "name": "alwanibrahim142"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "836fc52f-e7e0-4b24-87fb-40491166d2eb",
+              "leftValue": "={{ $json.pesan }}",
+              "rightValue": "={{ $('Telegram').item.json.message.text }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        -432
+      ],
+      "id": "c7629764-6e86-4dfe-83eb-e3f5f2cd6c4b",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.hasil_terproses }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        896,
+        -432
+      ],
+      "id": "07229718-1fd3-4eff-80be-3cd800585d66",
+      "name": "Send a text message",
+      "webhookId": "abc091f4-9830-4657-8401-38432eb1bad0",
+      "credentials": {
+        "telegramApi": {
+          "id": "uWC0ymsEKzmYGrsU",
+          "name": "Mamam.developer.bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        224,
+        -96
+      ],
+      "id": "5aa2db6d-1b2e-4799-b0d4-eaa0856ac73f",
+      "name": "db product",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pesan_user",
+          "mode": "list",
+          "cachedResultName": "pesan_user"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "pesan",
+              "value": "={{ $('Telegram').item.json.message.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        224,
+        -480
+      ],
+      "id": "ca8fe127-2c01-4448-9bb3-dd359a67fe20",
+      "name": "db pesan_user",
+      "credentials": {
+        "mySql": {
+          "id": "Y7CTksADXGxvRDva",
+          "name": "anduqieq32j_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bf37cbbe-0236-4892-8983-6c8f29fd9b23",
+              "name": "chat_id",
+              "value": "={{ $json.data[0].chat_id }}",
+              "type": "string"
+            },
+            {
+              "id": "92e15648-8a89-4619-ad98-76d662d13798",
+              "name": "username",
+              "value": "={{ $json.data[0].username }}",
+              "type": "string"
+            },
+            {
+              "id": "95dd8219-5185-4b19-b4cf-d71374fe9566",
+              "name": "email",
+              "value": "={{ $json.data[0].email }}",
+              "type": "string"
+            },
+            {
+              "id": "691d1fa1-5e09-4ba7-957e-715d3298a02b",
+              "name": "is_verified",
+              "value": "={{ $json.data[0].is_verified === 0 ?'belum terverifikasi': 'sudah terverifikasi' }}",
+              "type": "string"
+            },
+            {
+              "id": "1454e8fd-e89c-4c1d-a6f0-622fda23fe96",
+              "name": "status",
+              "value": "={{ $json.data[0].status }}",
+              "type": "string"
+            },
+            {
+              "id": "88d79465-3e5a-460d-90dc-eb39358dbc21",
+              "name": "balance",
+              "value": "={{ $json.data[0].balance }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        -288
+      ],
+      "id": "6fb3ed20-161b-4d5d-9120-79111e2f3248",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "74b35682-70b9-46cb-aa73-1b88807acef0",
+              "name": "nama",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "fc4ab247-a696-434e-9366-346ee1aca118",
+              "name": "price",
+              "value": "={{ $json.price }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        -96
+      ],
+      "id": "106cbb40-d29f-4247-bb94-512b281b3eb5",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "61eb1499-16c1-44d6-a3b3-0d5b48412814",
+              "name": "pesan",
+              "value": "={{ $json.pesan }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        -480
+      ],
+      "id": "56391bba-7427-416e-8a71-be6ff1705f9d",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "content": "## Catatan\nkita harus tahu mana yang fiks yaitu tidak usah membuat template di db karena memang buang buang waktu dan banyak error lagi pula, cuman 1 yaitu /informasi dan yang lain nya yang tidak berkaitan dengan user misal product/ atau yang lain nya kalau ada, itu bisa langsung edit lewat nocodb",
+        "height": 224,
+        "width": 640,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1536,
+        320
+      ],
+      "typeVersion": 1,
+      "id": "75da246c-ca93-41a6-9795-75ac2b060899",
+      "name": "Sticky Note"
     }
   ],
   "pinData": {},
@@ -709,6 +1021,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-09-18T08:48:43.000Z",
-  "versionId": "7ad4d7c2-0e88-4129-8cd2-a66d26efe9e4"
+  "updatedAt": "2025-09-19T09:36:23.000Z",
+  "versionId": "3503c157-1e0c-4d8b-acd0-6cf62ddacc77"
 }
