@@ -71,6 +71,17 @@
           }
         ]
       ]
+    },
+    "SerpAPI": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-09-18T00:48:42.732Z",
@@ -299,6 +310,25 @@
           "name": "AlwanIbrahim142"
         }
       }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        1856,
+        560
+      ],
+      "id": "7a33b80e-a1e3-43e1-8869-0e53f30595c2",
+      "name": "SerpAPI",
+      "credentials": {
+        "serpApi": {
+          "id": "7S1cpN13eZuxX1tB",
+          "name": "alwanibrahim142"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -317,6 +347,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-09-18T01:00:56.000Z",
-  "versionId": "f8e8c12a-fc0f-42b3-acbe-a9511d8f83a8"
+  "updatedAt": "2025-09-21T09:02:02.000Z",
+  "versionId": "e5849824-7e39-42b3-afde-b1cbf2b7d8ee"
 }
