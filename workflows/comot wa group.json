@@ -1,12 +1,334 @@
 {
   "active": false,
-  "connections": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get group info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get group info": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Select rows from a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek duplikate": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Insert rows in a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table1": {
+      "main": [
+        [
+          {
+            "node": "Cek duplikate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "createdAt": "2025-09-22T15:21:05.929Z",
   "id": "HMWA5rhGHSB4qW5C",
   "isArchived": false,
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "comot wa group",
-  "nodes": [],
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "611f1ad7-0dee-492a-839d-0b7fff10d400",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -144,
+        664
+      ],
+      "id": "c1c4f55c-b9af-46d6-a2e6-463fb706d8fe",
+      "name": "Webhook",
+      "webhookId": "611f1ad7-0dee-492a-839d-0b7fff10d400"
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "getGroupInfo",
+        "groupId": "={{ $json.body.chat_id }}@g.us"
+      },
+      "type": "@aldinokemal2104/n8n-nodes-gowa.gowa",
+      "typeVersion": 1,
+      "position": [
+        80,
+        672
+      ],
+      "id": "9c507228-8c0b-4a34-8159-f6fb61ca0313",
+      "name": "Get group info",
+      "retryOnFail": true,
+      "credentials": {
+        "goWhatsappApi": {
+          "id": "DQPon2WBwUAHNnHD",
+          "name": "Kailani"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        752,
+        672
+      ],
+      "id": "d01d7598-de97-41b1-9e52-2abc0dba0644",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Code Node JavaScript\nconst participants = $json.results.Participants;\n\n// Loop melalui semua participants dan format data\nconst memberRecords = participants.map((participant, index) => {\n  return {\n    group_jid: $json.results.JID,\n    group_name: $json.results.Name,\n    member_jid: participant.JID,\n    phone_number: participant.PhoneNumber,\n    lid: participant.LID,\n    is_admin: participant.IsAdmin,\n    is_super_admin: participant.IsSuperAdmin,\n    display_name: participant.DisplayName || '',\n    record_index: index,\n    collected_at: new Date().toISOString()\n  };\n});\n\n// Return array of objects untuk database insertion\nreturn memberRecords;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        304,
+        672
+      ],
+      "id": "92d4c5b0-0aaa-4b47-b5ca-2a711bcaaa67",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "number_wa",
+          "mode": "list",
+          "cachedResultName": "number_wa"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "no_wa",
+              "value": "={{ $('Loop Over Items').item.json.phone_number.split('@').first() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1440,
+        784
+      ],
+      "id": "187aa784-0e0a-45fa-9fe4-f1866314a927",
+      "name": "Insert rows in a table1",
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6d2e7a34-0225-45c8-8cfe-b61f0b9ad301",
+              "leftValue": "={{ $('Edit Fields').item.json.phone_number.split('@').first() }}",
+              "rightValue": "={{ $json.no_wa }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        672
+      ],
+      "id": "d3de5d4f-126a-4006-b436-066110b51464",
+      "name": "Cek duplikate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f2aa420e-a3bd-4d3c-aaf3-738509e42022",
+              "name": "phone_number",
+              "value": "={{ $json.phone_number }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        528,
+        664
+      ],
+      "id": "49ee81f1-20fa-4dc3-b9d0-96a32e3bb3af",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "number_wa",
+          "mode": "list",
+          "cachedResultName": "number_wa"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "no_wa",
+              "value": "={{ $json.phone_number.split('@').first() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        976,
+        672
+      ],
+      "id": "ea399547-521d-4174-a144-8d024f99a283",
+      "name": "Select rows from a table1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "Zu6AG4J3BZFPMNxP",
+          "name": "bot_gowa_personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "94b439dc-bb1f-4a59-ab39-6264048d47af",
+              "name": "aman",
+              "value": "aman",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        976,
+        472
+      ],
+      "id": "cf6e47e1-76a2-433b-863d-26e9236ee17e",
+      "name": "Edit Fields1"
+    }
+  ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
@@ -23,6 +345,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-09-22T15:21:05.000Z",
-  "versionId": "8f018125-6306-4fe3-95a3-1372def802fc"
+  "updatedAt": "2025-09-23T05:31:30.000Z",
+  "versionId": "cfd7fa64-496f-43a4-8413-02174a1acee3"
 }
