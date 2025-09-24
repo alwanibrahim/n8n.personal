@@ -122,7 +122,7 @@
       "typeVersion": 2.1,
       "position": [
         -144,
-        664
+        672
       ],
       "id": "c1c4f55c-b9af-46d6-a2e6-463fb706d8fe",
       "name": "Webhook",
@@ -191,7 +191,7 @@
           "values": [
             {
               "column": "no_wa",
-              "value": "={{ $('Loop Over Items').item.json.phone_number.split('@').first() }}"
+              "value": "={{ $('Loop Over Items').item.json.phone_number }}"
             }
           ]
         },
@@ -224,7 +224,7 @@
           "conditions": [
             {
               "id": "6d2e7a34-0225-45c8-8cfe-b61f0b9ad301",
-              "leftValue": "={{ $('Edit Fields').item.json.phone_number.split('@').first() }}",
+              "leftValue": "={{ $('Edit Fields').item.json.phone_number }}",
               "rightValue": "={{ $json.no_wa }}",
               "operator": {
                 "type": "string",
@@ -264,7 +264,7 @@
       "typeVersion": 3.4,
       "position": [
         528,
-        664
+        672
       ],
       "id": "49ee81f1-20fa-4dc3-b9d0-96a32e3bb3af",
       "name": "Edit Fields"
@@ -283,7 +283,7 @@
           "values": [
             {
               "column": "no_wa",
-              "value": "={{ $json.phone_number.split('@').first() }}"
+              "value": "={{ $json.phone_number }}"
             }
           ]
         },
@@ -323,7 +323,7 @@
       "typeVersion": 3.4,
       "position": [
         976,
-        472
+        480
       ],
       "id": "cf6e47e1-76a2-433b-863d-26e9236ee17e",
       "name": "Edit Fields1"
@@ -344,7 +344,7 @@
   ],
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-09-23T05:31:30.000Z",
-  "versionId": "cfd7fa64-496f-43a4-8413-02174a1acee3"
+  "triggerCount": 1,
+  "updatedAt": "2025-09-24T06:26:08.000Z",
+  "versionId": "bb695985-a2d3-4d22-89f0-d698dbd5287c"
 }
