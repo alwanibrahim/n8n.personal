@@ -102,7 +102,7 @@
         "jsonHeaders": "{\n  \"Authorization\": \"Bearer DEV-zggTtPraDOJ1Nl9qvBxKygPkFfX5GQ2RIYOXLZpk\",\n  \"Content-Type\": \"application/json\"\n}\n",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"method\": \"QRIS\",\n  \"merchant_ref\": \"T38800\",\n  \"amount\": 60000,\n  \"customer_name\": \"{{ $json.body.email }}\",\n  \"customer_email\": \"{{ $json.body.email }}\",\n  \"customer_phone\": \"081234202356\",\n  \"order_items\": [\n    {\n      \"sku\": \"CP001\",\n      \"name\": \"CapCut Premium\",\n      \"price\": 60000,\n      \"quantity\": 1\n    }\n  ],\n  \"callback_url\": \"https://n8n.yourdomain.com/webhook/tripay-callback\",\n  \"return_url\": \"https://yourfrontend.com/payment-success\",\n  \"expired_time\": 1736467200,\n  \"signature\": \"978f2049bee4732db4218c77ac79a2464188362bbe4361ef3ede2da7e8ae704c\"\n}\n ",
+        "jsonBody": "={\n  \"method\": \"QRIS\",\n  \"merchant_ref\": \"T38800\",\n  \"amount\": 60000,\n  \"customer_name\": \"{{ $json.body.email }}\",\n  \"customer_email\": \"{{ $json.body.email }}\",\n  \"customer_phone\": \"081234202356\",\n  \"order_items\": [\n    {\n      \"sku\": \"CP001\",\n      \"name\": \"CapCut Premium\",\n      \"price\": 60000,\n      \"quantity\": 1\n    }\n  ],\n  \"callback_url\": \"https://n8n.yourdomain.com/webhook/tripay-callback\",\n  \"return_url\": \"https://yourfrontend.com/payment-success\",\n  \"expired_time\": 1736467200,\n  \"signature\": \"3d1efbf73f761207bbfed1fa51a38c72dc8df66e1a8f547ec24a67630efbc053\"\n}\n ",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -169,7 +169,7 @@
       "credentials": {
         "gmailOAuth2": {
           "id": "6SNozMI0XBOhMl21",
-          "name": "Gmail account"
+          "name": "AlwanIbrahim142"
         }
       }
     },
@@ -207,7 +207,7 @@
       "credentials": {
         "mySql": {
           "id": "wluraYPR2Mni7DoN",
-          "name": "MySQL account 2"
+          "name": "db_transsaction"
         }
       }
     },
@@ -243,7 +243,7 @@
       "credentials": {
         "mySql": {
           "id": "wluraYPR2Mni7DoN",
-          "name": "MySQL account 2"
+          "name": "db_transsaction"
         }
       }
     },
@@ -308,6 +308,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-09-11T13:15:26.000Z",
-  "versionId": "5fa49af3-5fb2-4513-be3b-c1f10c71caf9"
+  "updatedAt": "2025-09-29T06:37:52.000Z",
+  "versionId": "85c6d474-1a78-4eae-b099-ca3356253afe"
 }
