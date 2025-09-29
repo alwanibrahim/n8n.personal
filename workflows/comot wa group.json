@@ -102,6 +102,66 @@
           }
         ]
       ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "voucher": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "laravel": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-09-22T15:21:05.929Z",
@@ -122,7 +182,7 @@
       "typeVersion": 2.1,
       "position": [
         -144,
-        672
+        744
       ],
       "id": "c1c4f55c-b9af-46d6-a2e6-463fb706d8fe",
       "name": "Webhook",
@@ -138,7 +198,7 @@
       "typeVersion": 1,
       "position": [
         80,
-        672
+        744
       ],
       "id": "9c507228-8c0b-4a34-8159-f6fb61ca0313",
       "name": "Get group info",
@@ -160,7 +220,7 @@
       "typeVersion": 3,
       "position": [
         752,
-        672
+        744
       ],
       "id": "d01d7598-de97-41b1-9e52-2abc0dba0644",
       "name": "Loop Over Items"
@@ -173,7 +233,7 @@
       "typeVersion": 2,
       "position": [
         304,
-        672
+        744
       ],
       "id": "92d4c5b0-0aaa-4b47-b5ca-2a711bcaaa67",
       "name": "Code in JavaScript"
@@ -200,8 +260,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.5,
       "position": [
-        1440,
-        784
+        1424,
+        816
       ],
       "id": "187aa784-0e0a-45fa-9fe4-f1866314a927",
       "name": "Insert rows in a table1",
@@ -241,7 +301,7 @@
       "typeVersion": 2.2,
       "position": [
         1200,
-        672
+        744
       ],
       "id": "d3de5d4f-126a-4006-b436-066110b51464",
       "name": "Cek duplikate"
@@ -264,7 +324,7 @@
       "typeVersion": 3.4,
       "position": [
         528,
-        672
+        744
       ],
       "id": "49ee81f1-20fa-4dc3-b9d0-96a32e3bb3af",
       "name": "Edit Fields"
@@ -327,6 +387,135 @@
       ],
       "id": "cf6e47e1-76a2-433b-863d-26e9236ee17e",
       "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        80,
+        1592
+      ],
+      "id": "8c31bbc7-c63e-4bdb-b762-89c70cbf0a89",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aBHjrzSTvf9MbwMC",
+          "name": "AlwanIbrahim142"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "selalu samakan nilai amount dengan price"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        200,
+        1368
+      ],
+      "id": "8e820f94-2ab2-48d4-b22a-974d6ab29004",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -144,
+        1368
+      ],
+      "id": "afc47796-4ccf-43da-959c-4a956083860d",
+      "name": "When chat message received",
+      "webhookId": "b2e25726-4c5d-4837-b49e-5371e7b53c89"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        1592
+      ],
+      "id": "fce10f12-6b14-4497-9fb2-aca1a50440de",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.tokovoucher.net/produk/code",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "member_code",
+              "value": "M250927WHJV2295ID"
+            },
+            {
+              "name": "signature",
+              "value": "fbd8ec8e5f4f97a3df145be3de29862a"
+            },
+            {
+              "name": "kode",
+              "value": "FF"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        336,
+        1592
+      ],
+      "id": "ff4c6290-56c7-437e-9468-87c31f1febfe",
+      "name": "voucher"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://tripay.co.id/api-sandbox/transaction/create",
+        "sendHeaders": true,
+        "specifyHeaders": "json",
+        "jsonHeaders": "{\n  \"Authorization\": \"Bearer DEV-zggTtPraDOJ1Nl9qvBxKygPkFfX5GQ2RIYOXLZpk\",\n  \"Content-Type\": \"application/json\"\n}\n",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"method\": \"QRIS\",\n  \"merchant_ref\": \"T38800\",\n  \"amount\": 60000,\n  \"customer_name\": \"{{ $json.body.email }}\",\n  \"customer_email\": \"{{ $json.body.email }}\",\n  \"customer_phone\": \"081234202356\",\n  \"order_items\": [\n    {\n      \"sku\": \"CP001\",\n      \"name\": \"CapCut Premium\",\n      \"price\": 60000,\n      \"quantity\": 1\n    }\n  ],\n  \"callback_url\": \"https://n8n.yourdomain.com/webhook/tripay-callback\",\n  \"return_url\": \"https://yourfrontend.com/payment-success\",\n  \"expired_time\": 1736467200,\n  \"signature\": \"978f2049bee4732db4218c77ac79a2464188362bbe4361ef3ede2da7e8ae704c\"\n}\n ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -144,
+        1040
+      ],
+      "id": "f3569313-cc12-49e7-8155-9e35c8c2983c",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://laravelsatu.vaultsy.online/api/transaction/create",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"method\": \"QRIS\",\n  \"merchant_ref\": \"ORDER123\",\n  \"amount\": {{ $fromAI(\"amount\") }},\n  \"customer_name\": \"{{ $fromAI(\"nama\") }}\",\n  \"customer_email\": \"budi@example.com\",\n  \"customer_phone\": \"08123456789\",\n  \"order_items\": [\n    {\n      \"sku\": \"SKU-1\",\n      \"name\": \"Produk Test\",\n      \"price\": {{ $fromAI(\"price\") }},\n      \"quantity\": 1\n    }\n  ],\n  \"return_url\": \"https://domainmu.com/return\",\n  \"callback_url\": \"https://domainmu.com/callback\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        464,
+        1592
+      ],
+      "id": "8c86c3b4-66b0-40da-b216-7bfb2f7eb8b6",
+      "name": "laravel"
     }
   ],
   "pinData": {},
@@ -345,6 +534,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-24T06:26:08.000Z",
-  "versionId": "bb695985-a2d3-4d22-89f0-d698dbd5287c"
+  "updatedAt": "2025-09-29T06:37:48.000Z",
+  "versionId": "31300d39-8e88-4e6e-aa8e-f99e46edf0e5"
 }
