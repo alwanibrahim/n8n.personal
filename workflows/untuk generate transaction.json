@@ -66,6 +66,22 @@
           }
         ]
       ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "QRify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-09-09T08:48:37.668Z",
@@ -290,6 +306,37 @@
       ],
       "id": "1f785e14-e914-49c3-9887-22a7ab3f33c4",
       "name": "If"
+    },
+    {
+      "parameters": {
+        "amount": 5000,
+        "qrisId": "a2eca25e-fb98-4b45-8c27-48c34b13d8d2"
+      },
+      "type": "n8n-nodes-qrify.qrify",
+      "typeVersion": 1,
+      "position": [
+        544,
+        384
+      ],
+      "id": "0255e843-19b4-4036-ae3b-6027a0ddc7e1",
+      "name": "QRify",
+      "credentials": {
+        "qrifyApi": {
+          "id": "nS1g3SCaK0cAgqrn",
+          "name": "QRify account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        336,
+        384
+      ],
+      "id": "d4816821-d0c8-48b2-a0f8-94f179280d3a",
+      "name": "When clicking ‘Execute workflow’"
     }
   ],
   "pinData": {},
@@ -308,6 +355,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-09-29T06:37:52.000Z",
-  "versionId": "85c6d474-1a78-4eae-b099-ca3356253afe"
+  "updatedAt": "2025-10-02T14:48:03.000Z",
+  "versionId": "82dfa0f1-8957-4ab8-bfc6-80e25d413ac4"
 }
