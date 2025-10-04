@@ -1,0 +1,47 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-10-04T08:27:18.911Z",
+  "id": "6OEQXwNYto99StzA",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "webhook51381",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vaga1",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6fbeb73d-a8c5-41bd-8e2f-922be4889c9b",
+      "name": "Webhook",
+      "webhookId": "e9cd8e70-24d8-4b16-901c-580c4c162704"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-04T08:27:18.930Z",
+      "updatedAt": "2025-10-04T08:27:18.930Z",
+      "role": "workflow:owner",
+      "workflowId": "6OEQXwNYto99StzA",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-04T08:53:38.000Z",
+  "versionId": "7522dcfa-a51f-418f-a47c-384019a52e3b"
+}
