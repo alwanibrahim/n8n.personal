@@ -1,6 +1,150 @@
 {
-  "active": false,
-  "connections": {},
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Select rows from a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        [
+          {
+            "node": "Update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table1": {
+      "main": [
+        [
+          {
+            "node": "Update rows in a table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table2": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table3": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Switch3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch3": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update rows in a table3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table4": {
+      "main": [
+        [
+          {
+            "node": "Update rows in a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update rows in a table2": {
+      "main": [
+        []
+      ]
+    }
+  },
   "createdAt": "2025-10-04T08:27:18.911Z",
   "id": "6OEQXwNYto99StzA",
   "isArchived": false,
@@ -12,18 +156,559 @@
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "vaga1",
+        "path": "paymentgateway",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        0,
-        0
+        16,
+        96
       ],
       "id": "6fbeb73d-a8c5-41bd-8e2f-922be4889c9b",
       "name": "Webhook",
       "webhookId": "e9cd8e70-24d8-4b16-901c-580c4c162704"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.status }}",
+                    "rightValue": "PAID",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bfaa2593-eed0-4cef-83b6-1119303c85e1"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "paid"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        400,
+        0
+      ],
+      "id": "9af75d9d-d7b4-4035-adf5-eadaaf7b0624",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.body.merchant_ref.split('-')[1] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        624,
+        -96
+      ],
+      "id": "72895b36-dc73-4abf-8fc5-3899a9576e7f",
+      "name": "Select rows from a table",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "balance",
+              "value": "={{ Number($json.balance.split('.')[0]) + Number($('Webhook').item.json.body.total_amount) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        848,
+        -96
+      ],
+      "id": "5726c852-e5a6-4dce-adcd-6cc9018663dd",
+      "name": "Update rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "deposits",
+          "mode": "list",
+          "cachedResultName": "deposits"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "reference",
+              "value": "={{ $json.body.merchant_ref }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        624,
+        96
+      ],
+      "id": "5c72043b-7ec7-4646-a192-8c7209af9775",
+      "name": "Select rows from a table1",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "deposits",
+          "mode": "list",
+          "cachedResultName": "deposits"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "status",
+              "value": "=completed"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        848,
+        96
+      ],
+      "id": "50fe2fbf-b867-4150-b67e-377fdb3ed11a",
+      "name": "Update rows in a table1",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.headers['x-callback-event'] }}",
+                    "rightValue": "payment_status",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bd53d414-f829-45f6-b71c-fea77002bea1"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "payment_status"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2fe7eefb-a1bc-4de7-8489-17ea798467bb",
+                    "leftValue": "={{ $json.body.context }}",
+                    "rightValue": "app_premium",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "app_premium"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        176,
+        96
+      ],
+      "id": "d1ecf97e-53df-4b83-903e-1c7befba57b9",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $json.body.product.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        624,
+        288
+      ],
+      "id": "8e4a25fb-a7c6-4504-8260-fbf7e48663b8",
+      "name": "Select rows from a table2",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "product_accounts",
+          "mode": "list",
+          "cachedResultName": "product_accounts"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "product_id",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "column": "is_used",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        848,
+        288
+      ],
+      "id": "b834930b-893a-4f7e-a8a2-fca391b2a4af",
+      "name": "Select rows from a table3",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Webhook').item.json.body.email }}",
+        "subject": "acoount premium ",
+        "message": "=email: {{ $json.username }}\npasswd: {{ $json.password }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1024,
+        288
+      ],
+      "id": "1248f5e8-9ddd-4ed5-a2ec-329f4a34c477",
+      "name": "Send a message",
+      "webhookId": "c4f49c72-2f87-435d-aed3-c20e833a4685",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "A0kR6KDbZM4fYEND",
+          "name": "MamamMewing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ca4a2d5a-f36d-46a2-a8a3-e3eaa5995375"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        400,
+        288
+      ],
+      "id": "4dd4ea49-0763-4b3b-857b-57a9bde690d6",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.labelIds[0] }}",
+                    "rightValue": "=SENT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "6f82d35e-e8df-4389-9f6f-993872bc4547"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "succes"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        1296,
+        288
+      ],
+      "id": "fb2435e3-1563-49fc-8bcc-33d987a5c5e0",
+      "name": "Switch3"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $('Webhook').item.json.body.user_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1520,
+        288
+      ],
+      "id": "793f7a3c-d7f5-46fd-a580-09342086b3c2",
+      "name": "Select rows from a table4",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "balance",
+              "value": "={{ Number( $json.balance.split('.')[0]) - Number($('Webhook').item.json.body.product.price) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1744,
+        288
+      ],
+      "id": "c2a0a229-a5e1-4dd5-a895-86eb59988903",
+      "name": "Update rows in a table2",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "product_accounts",
+          "mode": "list",
+          "cachedResultName": "product_accounts"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $('Select rows from a table3').item.json.id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "is_used",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1584,
+        144
+      ],
+      "id": "02ac61d2-9088-4fb8-8122-bffd86d6a152",
+      "name": "Update rows in a table3",
+      "credentials": {
+        "mySql": {
+          "id": "5YmUybiVRjA9f27f",
+          "name": "laravel89179ey"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -41,7 +726,7 @@
   ],
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-10-04T08:53:38.000Z",
-  "versionId": "7522dcfa-a51f-418f-a47c-384019a52e3b"
+  "triggerCount": 1,
+  "updatedAt": "2025-10-07T09:37:24.000Z",
+  "versionId": "379f499e-00ed-4603-a077-929c3c8812a9"
 }
