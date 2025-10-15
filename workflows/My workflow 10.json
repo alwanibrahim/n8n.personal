@@ -71,6 +71,22 @@
           }
         ]
       ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-10-07T13:34:35.498Z",
@@ -102,7 +118,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        472,
+        480,
         0
       ],
       "id": "8639f2d6-b967-4435-9d4c-4798292de121",
@@ -241,6 +257,44 @@
           "name": "laravel89179ey"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        976,
+        0
+      ],
+      "id": "45a4e8a4-b5cd-4eb6-b1e8-c3e80984abd3",
+      "name": "Select rows from a table",
+      "credentials": {
+        "mySql": {
+          "id": "wsZhZXOKq0CWKAxj",
+          "name": "localhost"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        832,
+        -16
+      ],
+      "id": "cbede7a2-f50c-45de-bc7a-3dd6548c236e",
+      "name": "When clicking ‘Execute workflow’"
     }
   ],
   "pinData": {},
@@ -259,6 +313,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-07T13:37:26.000Z",
-  "versionId": "ed74759a-783e-404a-a45c-541564091f2b"
+  "updatedAt": "2025-10-15T15:01:56.000Z",
+  "versionId": "a23a0d29-8666-429b-bb0c-da1268b8bbbe"
 }
