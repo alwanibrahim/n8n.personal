@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Set Prompt/Model": {
       "main": [
@@ -86,7 +86,7 @@
   },
   "createdAt": "2025-09-18T00:48:42.732Z",
   "id": "Qhpr23GCXrHYszji",
-  "isArchived": false,
+  "isArchived": true,
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -347,6 +347,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-09-21T09:02:02.000Z",
-  "versionId": "e5849824-7e39-42b3-afde-b1cbf2b7d8ee"
+  "updatedAt": "2025-10-27T04:48:29.000Z",
+  "versionId": "20e7e92e-89ab-4394-ac73-6f9107e036f2"
 }
