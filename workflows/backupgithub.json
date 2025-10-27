@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n": {
       "main": [
@@ -576,7 +576,8 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "shared": [
     {
@@ -594,6 +595,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-27T04:41:58.000Z",
-  "versionId": "c5e24e2b-7fdb-4780-8f3f-2caf18ff1e3d"
+  "updatedAt": "2025-10-27T04:48:04.000Z",
+  "versionId": "a7539e69-2934-4c3b-9ce8-0a85249dbdc2"
 }
