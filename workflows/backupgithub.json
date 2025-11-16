@@ -581,8 +581,8 @@
   },
   "shared": [
     {
-      "createdAt": "2025-09-18T00:15:25.971Z",
       "updatedAt": "2025-09-18T00:15:25.971Z",
+      "createdAt": "2025-09-18T00:15:25.971Z",
       "role": "workflow:owner",
       "workflowId": "vr48clEOOh8X4aRQ",
       "projectId": "0nz33CIKfd8yNGpK"
@@ -595,6 +595,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-27T04:48:04.000Z",
+  "updatedAt": "2025-11-16T09:06:30.000Z",
   "versionId": "a7539e69-2934-4c3b-9ce8-0a85249dbdc2"
 }
