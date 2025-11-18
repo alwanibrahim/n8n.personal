@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Users1": {
       "main": [
@@ -153,7 +153,7 @@
   },
   "createdAt": "2025-09-16T11:24:43.012Z",
   "id": "4H1HUlJL1H2on5gH",
-  "isArchived": false,
+  "isArchived": true,
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -884,6 +884,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-16T13:21:12.000Z",
-  "versionId": "9d3405ef-8980-4c7d-8d3a-d39a4eaf2bfd"
+  "updatedAt": "2025-11-18T14:34:45.000Z",
+  "versionId": "422914f7-90da-48b9-8ec7-aa2b5462af55"
 }
