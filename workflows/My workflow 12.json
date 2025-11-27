@@ -1,0 +1,76 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Execute a command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-27T02:10:30.290Z",
+  "id": "FeUIqSrtAHhfG98w",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 12",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8e2ac217-dfcc-4e59-9c43-2d754ad7e747",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "command": "ls"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -16
+      ],
+      "id": "cce8bb0d-344e-4132-91ef-3be0406e5b63",
+      "name": "Execute a command",
+      "credentials": {
+        "sshPassword": {
+          "id": "UClVxS0IFM5nUAZI",
+          "name": "localhost"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-27T02:10:30.298Z",
+      "createdAt": "2025-11-27T02:10:30.298Z",
+      "role": "workflow:owner",
+      "workflowId": "FeUIqSrtAHhfG98w",
+      "projectId": "0nz33CIKfd8yNGpK"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-27T02:21:33.000Z",
+  "versionId": "f6c6be35-a080-4ce7-b2af-6441677e0b64"
+}
